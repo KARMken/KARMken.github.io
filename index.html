@@ -16,7 +16,7 @@
       height: 100%;
       font-family: 'Poppins', sans-serif;
       color: rgba(255, 255, 255, 0.8);
-      overflow: hidden;
+      /* Remove overflow hidden to allow scrolling */
     }
 
     body {
@@ -54,24 +54,27 @@
     /* Portfolio Section */
     .portfolio-container {
       position: relative;
-      height: 100%;
+      min-height: 100vh; /* Ensure minimum height fills the screen */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      z-index:3;
+      z-index: 3;
+      padding: 1rem;
     }
 
     h1 {
       font-size: 3rem;
       margin-bottom: 2rem;
       color: rgba(255, 255, 255, 0.9);
+      text-align: center;
     }
 
     .projects {
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
     }
 
     .project-button {
@@ -83,7 +86,8 @@
       cursor: pointer;
       transition: all 0.3s ease;
       font-size: 1.2rem;
-      width: 250px;
+      width: 100%;
+      max-width: 250px;
       text-align: center;
       border-radius: 10px;
     }
@@ -94,10 +98,43 @@
     }
 
     footer {
-      position: absolute;
+      position: relative; /* Change from absolute to relative */
       bottom: 20px;
       font-size: 0.8rem;
-      z-index: 3; 
+      z-index: 3;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .project-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .project-button {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+      }
+
+      .projects {
+        width: 90%;
+      }
+
+      footer {
+        font-size: 0.7rem;
+      }
     }
 
   </style>
