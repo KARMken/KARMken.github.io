@@ -3,12 +3,10 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
   background: rgb(33, 37, 40);
-  margin: 0;
   overflow-x: hidden;
 }
 
@@ -53,6 +51,12 @@ ul {
 .navbar-nav .nav-link.active {
   color: #0d6efd;
 }
+.containerH,
+.containerC,
+.container1,
+.container2 {
+  overflow-x: hidden;
+}
 
 .navbar-toggler {
   border-color: #0056b3;
@@ -61,11 +65,10 @@ ul {
 
 /* Header Section */
 header {
-  width: 100%;
-  height: 100vh;
+  width: auto;
+  height: 40rem;
   background-image: url("./images/headerPH.png");
   background-position: center;
-  background-size: fit;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,7 +78,6 @@ header {
 header .container {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.3);
-  padding: 40px;
   border-radius: 10px;
 }
 
@@ -123,6 +125,7 @@ header a:hover {
 }
 
 .containerH {
+  width: auto;
   height: auto;
   background-color: #0056b3;
   color: whitesmoke;
@@ -160,7 +163,7 @@ header a:hover {
 }
 
 .containerC .col-12 {
-  width: 80%;
+  width: 100%;
   height: 600px;
   margin: auto;
   justify-content: center;
@@ -215,6 +218,7 @@ header a:hover {
   transition: transform 0.3s ease, background-color 0.3s ease;
   transform: scale(0.8);
   width: 500px;
+  max-width: 100%;
   height: 500px;
   box-shadow: 1px 10px 10px rgba(0, 0, 0, 1.2);
 }
@@ -228,5 +232,4 @@ header a:hover {
   border-radius: 2rem;
   color: whitesmoke;
   background-color: rgb(12, 12, 12);
-  min-height: 50%;
 }

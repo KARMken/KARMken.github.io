@@ -47,6 +47,7 @@
         background-color: #f8f9fa;
         z-index: 1000;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 1.2);
+        padding: 0.5rem 1rem;
       }
 
       .navbar-brand {
@@ -103,7 +104,8 @@
       }
 
       .carousel-item img {
-        height: 300px;
+        max-width: 100%;
+        height: 500px;
         object-fit: cover;
       }
 
@@ -124,7 +126,12 @@
           background-position: 0% 50%;
         }
       }
-
+      .containerH,
+      .containerW,
+      .containerC,
+      .containerC1 {
+        overflow-x: hidden;
+      }
       .containerW {
         background-color: rgb(46, 50, 54);
         box-shadow: 0 2px 20px rgba(0, 0, 0, 1.2);
