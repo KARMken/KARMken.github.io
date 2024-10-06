@@ -32,7 +32,7 @@ ul {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #f8f9fa;
+  background-color: #0056b3;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 1.2);
 }
@@ -55,7 +55,8 @@ ul {
 }
 
 .navbar-toggler {
-  border-color: whitesmoke;
+  border-color: #0056b3;
+  color: #0056b3;
 }
 
 /* Header Section */
