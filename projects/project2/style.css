@@ -79,6 +79,7 @@ header .container {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
+  padding: 40px;
 }
 
 header h2 {
