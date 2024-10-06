@@ -64,7 +64,7 @@ header {
   height: 100vh;
   background-image: url("./images/headerPH.png");
   background-position: center;
-  background-size: cover;
+  background-size: fit;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,8 +121,8 @@ header a:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 1.2);
 }
 
-.row1 {
-  height: 50px;
+.containerH {
+  height: auto;
   background-color: #0056b3;
   color: whitesmoke;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 1.2);
@@ -131,7 +131,7 @@ header a:hover {
   margin-bottom: 80px;
 }
 
-.row1 h5 {
+.containerH h5 {
   padding-top: 5px;
   font-size: 30px;
   font-weight: 2px;
@@ -178,29 +178,23 @@ header a:hover {
 
 .carousel-caption h5 {
   color: whitesmoke;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
   border-radius: 10px;
 }
 
 .carousel-caption p {
   color: rgb(12, 12, 12);
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   padding: 5px 15px;
-}
-.row2 .col1 {
-  background-color: rgb(33, 37, 40);
-  width: 700px;
-  height: 700px;
-  margin: 80px;
 }
 
 .container1 .row {
   padding-top: 50px;
 }
 
-.container .col-4 {
+.container1 .col-4 {
   display: flex;
   align-items: center;
   justify-content: center;
