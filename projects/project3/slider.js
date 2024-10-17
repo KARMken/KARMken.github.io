@@ -9,7 +9,7 @@ let timeDom = document.querySelector('.carousel .time');
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 let timeRunning = 3000;
-let timeAutoNext = 7000;
+let timeAutoNext = 15000;
 
 nextDom.onclick = function(){
     clearTimeout(runNextAuto); // Clear timeout on manual click
