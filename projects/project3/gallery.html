@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Original */
+      [data-bs-theme="maroon"] {
+        --bs-body-color: #cabebf;
+        --bs-body-bg: #210002;
+        --bs-body-bg-rgb: #210002;
+        --bs-tertiary-bg: #210002;
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+          color: #a01f1b;
+        }
+        .navbar-toggler {
+          border-color: #7f211d;
+          color: #871c18;
+        }
+        .navbar-brand {
+          color: white !important;
+        }
+        .navbar-nav .nav-link {
+          color: white;
+          margin: 0 15px;
+          font-weight: bold;
+        }
+        .button-mode {
+          border-radius: 20px;
+          border-color: #210002;
+          width: 80px;
+          height: 100%;
+          color: White;
+          background-color: #a01f1b;
+        }
+        .button-mode:hover {
+          transform: scale(1.1);
+        }
+        .intro button {
+          background-color: #871c18;
+          border: 1px solid #591f1d;
+          color: #fff;
+        }
+        .carousel .list .item .topic {
+          color: #f1683a;
+        }
+        .highlight {
+          color: #a01f1b;
+          font-weight: bold;
+        }
+        .carousel .list .item .buttons button {
+          color: white;
+          background-color: #591f1d;
+        }
+        .carousel .list .item .buttons button:hover {
+          background-color: #88302d;
+        }
+        .content .des {
+          background-color: rgba(72, 26, 26, 0.4);
+        }
+        .arrows button {
+          background-color: #591f1d;
+          color: #fff;
+        }
+        .arrows button:hover {
+          background-color: #a01f1b;
+          color: #000;
+        }
+        .carousel .time {
+          background-color: #f1683a;
+        }
+      }
+      /* Dark */
+      [data-bs-theme="dark"] {
+        --bs-body-color: #ffffff;
+        --bs-body-bg: #06000c;
+        --bs-body-bg-rgb: #06000c;
+        --bs-tertiary-bg: #06000c;
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+          color: #1b3ea0;
+        }
+        .navbar-toggler {
+          border-color: #191caa;
+          color: #1a1dc2;
+        }
+        .navbar-brand {
+          color: white !important;
+        }
+        .navbar-nav .nav-link {
+          color: white;
+          margin: 0 15px;
+          font-weight: bold;
+        }
+        .button-mode {
+          border-radius: 20px;
+          border-color: transparent;
+          height: 100%;
+          width: 80px;
+          color: White;
+          background-color: #191caa;
+        }
+        .button-mode:hover {
+          font-weight: bold;
+          transform: scale(1.1);
+        }
+        .intro button {
+          background-color: #3b1887;
+          border: 1px solid #211d59;
+          color: #ffffff;
+          transform: scale(0.8);
+        }
+
+        .intro button:hover {
+          transform: scale(1);
+        }
+        .carousel .list .item .topic {
+          color: #1a1dc2;
+        }
+        .highlight {
+          color: #191caa;
+          font-weight: bold;
+        }
+        .carousel .list .item .buttons button {
+          color: white;
+          background-color: #2b1d59;
+        }
+        .carousel .list .item .buttons button:hover {
+          background-color: #3f2d88;
+        }
+        .content .des {
+          background-color: rgba(36, 16, 57, 0.4);
+        }
+        .arrows button {
+          background-color: #1b0234;
+          color: #fff;
+        }
+        .arrows button:hover {
+          background-color: #23065d;
+          color: #d6d6d6;
+        }
+        .carousel .time {
+          background-color: #1a1dc2;
+        }
+      }
+    </style>
+  </head>
+  <body id="body">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">OUTDOOR ADVENTURE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-list">
+            <li class="nav-item">
+              <a class="nav-link" href="./">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#collection">Collection</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item nav-button">
+              <button class="button-mode" onclick="changeMode()">Mode</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="banner">
+      <div class="bg bg-1" id="bg1"></div>
+      <div class="bg bg-2" id="bg2"></div>
+      <div class="bg bg-3" id="bg3"></div>
+      <h1 class="animated-title">Gallery</h1>
+      <div class="bg bg-4" id="bg4"></div>
+      <div class="bg bg-5" id="bg5"></div>
+      <div class="bg bg-6" id="bg6"></div>
+      <div class="bg bg-7" id="bg7"></div>
+      <div class="bg bg-8" id="bg8"></div>
+      <div class="bg bg-9" id="bg9"></div>
+    </div>
+    <div class="containerInfo">
+      <div class="row" style="height: 200px"></div>
+      <div class="row">
+        <div class="col-md-2 col-1"></div>
+        <div class="col-md-8 col-10">
+          <div class="tab intro">
+            <h2
+              class="animation-show pb-5"
+              style="font-family: 'Pacifico', cursive"
+            >
+              The Beauty of Nature: A Gallery Experience
+            </h2>
+            <p class="animation-show pb-2">
+              Discover the breathtaking beauty of the natural world through our
+              curated collection of stunning visuals. From majestic landscapes
+              and vibrant wildlife to intricate flora, each category invites you
+              to witness the diversity of life on Earth.
+            </p>
+            <p class="animation-show">
+              As you navigate through our gallery, may you be inspired to
+              appreciate and protect the delicate balance of our environment.
+              Enjoy your journey through nature’s wonders!
+            </p>
+          </div>
+        </div>
+        <div class="col-md-2 col-1"></div>
+      </div>
+    </div>
+    <div class="container mt-5" id="collection">
+      <div class="row" style="height: 100px"></div>
+      <div class="row">
+        <div class="col-12">
+          <div class="name-ticker">
+            <ul>
+              <li>
+                <span class="name">COLLECTION:</span>
+                <span class="place">NATURE GALLERY</span>
+              </li>
+              <li>
+                <span class="name">WILDLIFE WONDERS</span>
+                <span></span>
+              </li>
+              <li>
+                <span class="name">FLORA AND FAUNA</span>
+                <span></span>
+              </li>
+              <li>
+                <span class="name">UNDERWATER ADVENTURES</span>
+                <span></span>
+              </li>
+              <li>
+                <span class="name">NATURAL PHENOMENA</span>
+                <span></span>
+              </li>
+            </ul>
+            <ul aria-hidden="true">
+              <li>
+                <span class="name">COLLECTION:</span>
+                <span class="place">NATURE GALLERY</span>
+              </li>
+              <li>
+                <span class="name">WILDLIFE WONDERS</span>
+                <span></span>
+              </li>
+              <li>
+                <span class="name">FLORA AND FAUNA</span>
+                <span></span>
+              </li>
+              <li>
+                <span class="name">UNDERWATER ADVENTURES</span>
+                <span></span>
+              </li>
+              <li>
+                <span class="name">NATURAL PHENOMENA</span>
+                <span></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="height: 100px"></div>
+      <div class="row pt-5">
+        <div class="col-md-12 col-12">
+          <div class="tab intro">
+            <h1 class="animation-show" style="text-align: center" id="bolivia">
+              WILDLIFE WONDERS
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="height: 100px"></div>
+    </div>
+    <div class="container-fluid"></div>
+    <div class="row card-containerWW" id="card-containerWW">
+      <!-- Looping Wildlife Wonder pictures -->
+    </div>
+    <div class="container">
+      <div class="row" style="height: 100px"></div>
+      <div class="row pt-5">
+        <div class="col-md-12 col-12">
+          <div class="tab intro">
+            <h1 class="animation-show" style="text-align: center" id="bolivia">
+              FLORA AND FAUNA
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="height: 100px"></div>
+    </div>
+    <div class="container-fluid"></div>
+    <div class="row card-containerWW" id="card-containerFF">
+      <!-- Looping Flora and Fauna pictures -->
+    </div>
+    <div class="container">
+      <div class="row" style="height: 100px"></div>
+      <div class="row pt-5">
+        <div class="col-md-12 col-12">
+          <div class="tab intro">
+            <h1 class="animation-show" style="text-align: center" id="bolivia">
+              UNDERWATER ADVENTURE
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="height: 100px"></div>
+    </div>
+    <div class="container-fluid"></div>
+    <div class="row card-containerWW" id="card-containerUA">
+      <!-- Looping Underwater Adventure pictures -->
+    </div>
+    <div class="container">
+      <div class="row" style="height: 100px"></div>
+      <div class="row pt-5">
+        <div class="col-md-12 col-12">
+          <div class="tab intro">
+            <h1 class="animation-show" style="text-align: center" id="bolivia">
+              NATURAL PHENOMENA
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="height: 100px"></div>
+    </div>
+    <div class="container-fluid"></div>
+    <div class="row card-containerWW" id="card-containerNP">
+      <!-- Looping Natural Phenomena pictures -->
+    </div>
+    <!-- Footer -->
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item">
+          <a
+            href="index.html"
+            class="nav-link footer-link"
+            aria-label="Go to Home"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="gallery.html#collection"
+            class="nav-link footer-link"
+            aria-label="Go to Collection"
+            >Collection</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="gallery.html"
+            class="nav-link footer-link"
+            aria-label="Go to Gallery"
+            >Gallery</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="../../index.html"
+            class="nav-link footer-link"
+            aria-label="Go to Creator"
+            >Creator</a
+          >
+        </li>
+      </ul>
+      <p class="text-center text-white">© 2024 KARMKEN, All Rights Reserved</p>
+    </footer>
+    <script>
+      // Data
+      var WWpics = [
+        "bird.jpg",
+        "bear.jpg",
+        "deer.jpg",
+        "flamingo.jpg",
+        "frog.jpg",
+        "elephant.jpg",
+        "squirrel.jpg",
+        "swan.jpg",
+        "tiger.jpg",
+      ];
+
+      var FFpics = [
+        "1FF.jpg",
+        "bee.jpg",
+        "2FF.jpg",
+        "butterfly.jpg",
+        "cham.jpg",
+        "cherry.jpg",
+        "parrot.jpg",
+        "3FF.jpg",
+        "4FF.jpg",
+      ];
+      var UApics = [
+        "1UA.jpg",
+        "2UA.jpg",
+        "3UA.jpg",
+        "4UA.jpg",
+        "5UA.jpg",
+        "6UA.jpg",
+        "7UA.jpg",
+        "8UA.jpg",
+        "9UA.jpg",
+        "10UA.jpg",
+        "11UA.jpg",
+        "12UA.jpg",
+        "13UA.jpg",
+        "14UA.jpg",
+        "15UA.jpg",
+      ];
+      var NPpics = [
+        "1NP.jpg",
+        "5NP.jpg",
+        "3NP.jpg",
+        "2NP.jpg",
+        "4NP.jpg",
+        "6NF.avif",
+        "7NP.avif",
+        "9NP.jpg",
+        "8NP.jpg",
+      ];
+
+      //   Loops
+
+      var cardContainerWW = document.getElementById("card-containerWW");
+      var cardContainerFF = document.getElementById("card-containerFF");
+      var cardContainerUA = document.getElementById("card-containerUA");
+      var cardContainerNP = document.getElementById("card-containerNP");
+
+      // WW
+      WWpics.forEach((WWpic, i) => {
+        cardContainerWW.innerHTML += `
+  <div class="col-md-4 col-sm-6 p-5 tab intro">
+    <div class="animation-show">
+      <div class="card" id="cWW${i}" style="width: 100%; height: 400px; overflow: hidden;" onmouseenter="hover('cWW${i}')" onmouseleave="unhover('cWW${i}')">
+        <img src="./resources/WW/${WWpic}" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+    </div>
+  </div>`;
+      });
+
+      // FF
+      FFpics.forEach((FFpic, i) => {
+        cardContainerFF.innerHTML += `
+  <div class="col-md-4 col-sm-6 p-5 tab intro">
+    <div class="animation-show">
+      <div class="card" id="cFF${i}" style="width: 100%; height: 400px; overflow: hidden;" onmouseenter="hover('cFF${i}')" onmouseleave="unhover('cFF${i}')">
+        <img src="./resources/FF/${FFpic}" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+    </div>
+  </div>`;
+      });
+
+      // UA
+      UApics.forEach((UApic, i) => {
+        cardContainerUA.innerHTML += `
+  <div class="col-md-4 col-sm-6 p-5 tab intro">
+    <div class="animation-show">
+      <div class="card" id="cUA${i}" style="width: 100%; height: 400px; overflow: hidden;" onmouseenter="hover('cUA${i}')" onmouseleave="unhover('cUA${i}')">
+        <img src="./resources/UA/${UApic}" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+    </div>
+  </div>`;
+      });
+
+      // NP
+      NPpics.forEach((NPpic, i) => {
+        cardContainerNP.innerHTML += `
+  <div class="col-md-4 col-sm-6 p-5 tab intro">
+    <div class="animation-show">
+      <div class="card" id="cNP${i}" style="width: 100%; height: 400px; overflow: hidden;" onmouseenter="hover('cNP${i}')" onmouseleave="unhover('cNP${i}')">
+        <img src="./resources/NP/${NPpic}" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+    </div>
+  </div>`;
+      });
+
+      // Adds a shadow and change bootstrap class
+      function hover(id) {
+        const card = document.getElementById(id);
+        const allCards = document.querySelectorAll(".card"); // Select all cards
+
+        allCards.forEach((otherCard) => {
+          if (otherCard.id !== id) {
+            otherCard.style.transition = "transform 1s ease";
+            otherCard.style.transform = "scale(0.8)";
+            otherCard.style.opacity = "0.5";
+          }
+        });
+        card.style.boxShadow = "0 20px 20px rgba(150, 150, 150, .5)";
+
+        card.style.transition = "transform 0.5s ease, z-index 0s";
+        card.style.transform = "scale(1.2)";
+        card.style.zIndex = "10";
+      }
+      // Removes shadow and change bootstrap class
+      function unhover(id) {
+        const card = document.getElementById(id);
+        const allCards = document.querySelectorAll(".card"); // Select all cards
+
+        allCards.forEach((otherCard) => {
+          otherCard.style.transform = "scale(1)";
+          otherCard.style.opacity = "1";
+        });
+
+        card.style.boxShadow = "none";
+
+        card.style.transition = "transform 0.2s ease, z-index 0s";
+        card.style.transform = "scale(1)";
+        card.style.zIndex = "1"; // Reset z-index
+      }
+
+      let animationTriggered = false;
+
+      document.addEventListener("scroll", function () {
+        const bannerTitle = document.querySelector(".banner h1");
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 0 && !animationTriggered) {
+          bannerTitle.classList.remove("animated-title");
+          animationTriggered = true;
+        } else if (scrollPosition === 0 && !animationTriggered) {
+          bannerTitle.classList.add("animated-title");
+        }
+      });
+    </script>
+
+    <script>
+      // Initialize colorMode variable
+      let colorMode = localStorage.getItem("theme") || "dark";
+
+      // Load previous theme on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("body")
+          .setAttribute("data-bs-theme", colorMode);
+
+        // Update background images
+        updateBackgroundImages();
+      });
+
+      // Function to change the theme
+      function changeMode() {
+        colorMode = colorMode === "dark" ? "maroon" : "dark";
+        document
+          .getElementById("body")
+          .setAttribute("data-bs-theme", colorMode);
+
+        // Save the selected theme to local storage
+        localStorage.setItem("theme", colorMode);
+
+        // Update background images after changing the theme
+        updateBackgroundImages();
+      }
+
+      // Function to update background images based on the theme
+      function updateBackgroundImages() {
+        var bgImages = [
+          `resources/0${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/1${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/2${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/3${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/4${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/5${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/6${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/7${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/8${colorMode === "dark" ? "(D)" : ""}.png`,
+        ];
+
+        for (let i = 0; i < 9; i++) {
+          var bgElement = document.getElementById(`bg${i + 1}`);
+          bgElement.style.backgroundImage = `url("${bgImages[i]}")`;
+        }
+      }
+    </script>
+
+    <script src="scroll.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

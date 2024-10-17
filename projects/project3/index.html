@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .intro {
+        display: flex;
+      }
+      /* Original */
+      .container {
+        color: white;
+        overflow: hidden;
+      }
+
+      .container img {
+        opacity: 50%;
+        margin-block: 30px;
+        height: auto;
+        width: 100%;
+        border-radius: 30px;
+        object-fit: cover;
+      }
+      [data-bs-theme="maroon"] {
+        --bs-body-color: #cabebf;
+        --bs-body-bg: #210002;
+        --bs-body-bg-rgb: #210002;
+        --bs-tertiary-bg: #a01f1b;
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+          color: #a01f1b;
+        }
+        .navbar-toggler {
+          border-color: #7f211d;
+          color: #871c18;
+        }
+        .navbar-brand {
+          color: white !important;
+        }
+        .navbar-nav .nav-link {
+          color: white;
+          margin: 0 15px;
+          font-weight: bold;
+        }
+        .button-mode {
+          border-radius: 20px;
+          border-color: transparent;
+          width: 80px;
+          height: 100%;
+          color: White;
+          background-color: #a01f1b;
+        }
+        .footer-link:hover {
+          color: #a01f1b;
+        }
+        .button-mode:hover {
+          font-weight: bold;
+          transform: scale(1.1);
+        }
+        .intro button {
+          background-color: #871c18;
+          border: 1px solid #591f1d;
+          color: #fff;
+        }
+        .carousel .list .item .topic {
+          color: #f1683a;
+        }
+        .highlight {
+          color: #a01f1b;
+          font-weight: bold;
+        }
+        .carousel .list .item .buttons button {
+          color: white;
+          background-color: #591f1d;
+        }
+        .carousel .list .item .buttons button:hover {
+          background-color: #88302d;
+        }
+        .content .des {
+          background-color: rgba(72, 26, 26, 0.4);
+        }
+        .arrows button {
+          background-color: #591f1d;
+          color: #fff;
+        }
+        .arrows button:hover {
+          background-color: #a01f1b;
+          color: #000;
+        }
+        .carousel .time {
+          background-color: #f1683a;
+        }
+      }
+      /* Dark */
+      [data-bs-theme="dark"] {
+        --bs-body-color: #ffffff;
+        --bs-body-bg: #06000c;
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+          color: #1b3ea0;
+        }
+        .navbar-toggler {
+          border-color: #191caa;
+          color: #1a1dc2;
+        }
+        .navbar-brand {
+          color: white !important;
+        }
+        .navbar-nav .nav-link {
+          color: white;
+          margin: 0 15px;
+          font-weight: bold;
+        }
+        .button-mode {
+          border-radius: 20px;
+          border-color: #191caa;
+          height: 100%;
+          width: 80px;
+          color: White;
+          background-color: #191caa;
+        }
+
+        .footer-link:hover {
+          color: #191caa;
+        }
+        .button-mode:hover {
+          font-weight: bold;
+          transform: scale(1.1);
+        }
+        .intro button {
+          background-color: #3b1887;
+          border: 1px solid #211d59;
+          color: #ffffff;
+          transform: scale(0.8);
+        }
+
+        .intro button:hover {
+          transform: scale(1);
+        }
+        .carousel .list .item .topic {
+          color: #1a1dc2;
+        }
+        .highlight {
+          color: #191caa;
+          font-weight: bold;
+        }
+        .carousel .list .item .buttons button {
+          color: white;
+          background-color: #2b1d59;
+        }
+        .carousel .list .item .buttons button:hover {
+          background-color: #3f2d88;
+        }
+        .content .des {
+          background-color: rgba(36, 16, 57, 0.4);
+        }
+        .arrows button {
+          background-color: #1b0234;
+          color: #fff;
+        }
+        .arrows button:hover {
+          background-color: #23065d;
+          color: #d6d6d6;
+        }
+        .carousel .time {
+          background-color: #1a1dc2;
+        }
+      }
+    </style>
+  </head>
+  <body id="body" data-bs-theme="dark">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">OUTDOOR ADVENTURE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-list">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#collection">Collection</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item nav-button">
+              <button class="button-mode" onclick="changeMode()">Mode</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="banner">
+      <div class="bg bg-1" id="bg1"></div>
+      <div class="bg bg-2" id="bg2"></div>
+      <div class="bg bg-3" id="bg3"></div>
+      <h1 class="animated-title">Explore</h1>
+      <div class="bg bg-4" id="bg4"></div>
+      <div class="bg bg-5" id="bg5"></div>
+      <div class="bg bg-6" id="bg6"></div>
+      <div class="bg bg-7" id="bg7"></div>
+      <div class="bg bg-8" id="bg8"></div>
+      <div class="bg bg-9" id="bg9"></div>
+    </div>
+    <div class="containerInfo">
+      <div class="row" style="height: 200px"></div>
+      <div class="row">
+        <div class="col-md-2 col-1"></div>
+        <div class="col-md-8 col-10">
+          <div class="tab intro">
+            <h2
+              class="animation-show pb-5"
+              style="font-family: 'Pacifico', cursive"
+            >
+              Explore Through Different Sceneries
+            </h2>
+            <p class="animation-show pb-5">
+              Get ready for an outdoor adventure that will take your breath
+              away! Imagine hiking through vibrant forests, with sunlight
+              filtering through the trees and the fresh scent of pine in the
+              air. As you climb rocky mountains, you'll be rewarded with
+              stunning views of vast valleys and sparkling lakes. Picture
+              yourself rafting down lively rivers, the rush of water and the
+              thrill of nature all around you. Each moment is filled with
+              excitement and discovery, inviting you to explore the incredible
+              beauty of the great outdoors. Whether you’re seeking relaxation or
+              adventure, nature has something amazing waiting for you!
+            </p>
+          </div>
+        </div>
+        <div class="col-md-2 col-1"></div>
+      </div>
+      <div class="row" style="height: 50px" id="gapExpand"></div>
+    </div>
+
+    <div class="container-fluid" id="moreInfo" style="display: none">
+      <div class="row pt-5">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 col-12">
+          <h1 class="credits-title pb-3">Credits to the rightful owners</h1>
+          <p class="credits-description pb-3">
+            This website is inspired by different tutorials on Youtube. Hence,
+            it is only for educational purposes to help me with my journey in
+            exploring different web development structures. Feel free to inspect
+            my site.
+          </p>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+    <div class="containerInfo">
+      <div class="row">
+        <div class="col-md-2 col-1"></div>
+        <div class="col-md-8 col-10">
+          <div class="tab intro">
+            <button
+              class="animation-show"
+              onclick="expandContent()"
+              id="btnExpand"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+        <div class="col-md-2 col-1"></div>
+      </div>
+      <div class="row" style="height: 200px"></div>
+    </div>
+
+    <div class="containerSpacingI-S py-5">
+      <div class="row">
+        <div class="col-12"></div>
+      </div>
+      <div class="row">
+        <div class="col-12"></div>
+      </div>
+      <div class="row">
+        <div class="col-12"></div>
+      </div>
+    </div>
+
+    <!-- carousel -->
+    <div class="carousel">
+      <!-- list item -->
+      <div class="list">
+        <div class="item">
+          <img src="resources/antarctica.jpg" />
+          <div class="content">
+            <div class="author">KARMKEN</div>
+            <div class="title">ANTARCTICA</div>
+            <div class="topic">PLACE</div>
+            <div class="des">
+              <p>
+                Although 99 percent of Antarctica is covered with ice, the
+                landscape still manages to be stunningly diverse—surreal blue
+                glaciers, active volcanoes, the rough waterways of the Drake
+                Passage, and 360-degree views of untouched snow. And those views
+                are made even better when an emperor penguin or humpback whale
+                makes an appearance.
+              </p>
+            </div>
+            <div class="buttons">
+              <button onclick="scrollToSection('antarctica')">SEE MORE</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="resources/mount fuji.jpg" />
+          <div class="content">
+            <div class="author">KARMKEN</div>
+            <div class="title">MOUNT FUJI</div>
+            <div class="topic">PLACE</div>
+            <div class="des">
+              <p>
+                It’s hard to pick the single most beautiful place in Japan, but
+                12,388-foot Mount Fuji just might take the prize. Visit Lake
+                Kawaguchiko in the spring for some of the best views of the
+                mountain and cherry blossom trees—a postcard-worthy sight if we
+                ever saw one. Or if you’re an avid hiker, plan a trip for
+                mid-July until the end of August, when the snow melts enough to
+                allow access to Fuji’s summit.
+              </p>
+            </div>
+            <div class="buttons">
+              <button onclick="scrollToSection('mtFuji')">SEE MORE</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="resources/svalbard.jpg" />
+          <div class="content">
+            <div class="author">KARMKEN</div>
+            <div class="title">SVALBARD</div>
+            <div class="topic">PLACE</div>
+            <div class="des">
+              <p>
+                Svalbard, the northern archipelago off the coast of Norway, is
+                known for spectacular Northern Lights viewing opportunities—the
+                sky is pitch black all day and night from October through
+                February, due to its position within the Arctic Circle. Svalbard
+                is also celebrated for its wildlife, including polar bears and
+                arctic foxes who live out their days among the deep fjords and
+                sheets of ice.
+              </p>
+            </div>
+            <div class="buttons">
+              <button onclick="scrollToSection('svalbard')">SEE MORE</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="resources/salarDeUyuni.jpg" />
+          <div class="content">
+            <div class="author">KARMKEN</div>
+            <div class="title">SALAR DE UYUNI</div>
+            <div class="topic">PLACE</div>
+            <div class="des">
+              <p>
+                Southwest Bolivia’s Salar de Uyuni is the largest salt flat in
+                the world, and is about as surreal as landscapes come. When dry,
+                the flat is a sheet of blindingly white salt tiles. During the
+                wet season, the shallow lake mirrors the sky, creating a dreamy
+                illusion of infinity.
+              </p>
+            </div>
+            <div class="buttons">
+              <button onclick="scrollToSection('bolivia')">SEE MORE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- list thumnail -->
+      <div class="thumbnail">
+        <div class="item">
+          <img src="resources/antarctica.jpg" />
+          <div class="content">
+            <div class="title">Antarctica</div>
+            <div class="description">N/A</div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="resources/mount fuji.jpg" />
+          <div class="content">
+            <div class="title">Mount Fuji</div>
+            <div class="description">Japan</div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="resources/svalbard.jpg" />
+          <div class="content">
+            <div class="title">Svalbard</div>
+            <div class="description">Norway</div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="resources/salarDeUyuni.jpg" />
+          <div class="content">
+            <div class="title">Salar De Uyuni</div>
+            <div class="description">Bolivia</div>
+          </div>
+        </div>
+      </div>
+      <!-- next prev -->
+
+      <div class="arrows">
+        <button id="prev"><</button>
+        <button id="next">></button>
+      </div>
+      <!-- time running -->
+      <div class="time"></div>
+    </div>
+
+    <div class="container mt-5" id="collection">
+      <div class="row" style="height: 100px"></div>
+      <div class="row">
+        <div class="col-12">
+          <div class="name-ticker">
+            <ul>
+              <li>
+                <span class="name">COLLECTION:</span>
+                <span class="place">DESTINATURE</span>
+              </li>
+              <li>
+                <span class="name">Antarctica:</span>
+                <span class="place">N/A</span>
+              </li>
+              <li>
+                <span class="name">MOUNT FUJI:</span>
+                <span class="place">JAPAN</span>
+              </li>
+              <li>
+                <span class="name">SVALBARD:</span>
+                <span class="place">NORWAY</span>
+              </li>
+              <li>
+                <span class="name">SALAR DE UYUNI:</span>
+                <span class="place">BOLIVIA</span>
+              </li>
+            </ul>
+            <ul aria-hidden="true">
+              <li>
+                <span class="name">COLLECTION:</span>
+                <span class="place">DESTINATURE</span>
+              </li>
+              <li>
+                <span class="name">Antarctica:</span>
+                <span class="place">N/A</span>
+              </li>
+              <li>
+                <span class="name">MOUNT FUJI:</span>
+                <span class="place">JAPAN</span>
+              </li>
+              <li>
+                <span class="name">SVALBARD:</span>
+                <span class="place">NORWAY</span>
+              </li>
+              <li>
+                <span class="name">SALAR DE UYUNI:</span>
+                <span class="place">BOLIVIA</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row" style="height: 100px"></div>
+      </div>
+      <div class="row pt-5">
+        <div class="col-md-1"></div>
+        <div class="col-md-12 col-12">
+          <div class="tab intro">
+            <h1
+              class="animation-show"
+              style="text-align: center"
+              id="antarctica"
+            >
+              About Antarctica
+            </h1>
+            <img
+              class="animation-show"
+              src="https://images.unsplash.com/photo-1493328967571-819121ed5085?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="antarctica"
+            />
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 col-12">
+          <div class="tab intro">
+            <p class="animation-show">
+              Antarctica, the fifth-largest continent, is a land of extremes,
+              both in climate and geography. Encompassing an area of about
+              <span class="highlight">14 million square kilometers</span>, it is
+              the coldest, windiest, and driest continent on Earth. Located at
+              the southernmost part of the globe, Antarctica is predominantly
+              covered by ice, which contains approximately 60% of the world's
+              fresh water. The ice sheets, some of which are over four
+              kilometers thick, shape the continent’s striking landscapes,
+              featuring towering glaciers, deep crevasses, and vast ice shelves
+              that calve into the Southern Ocean. Despite its harsh environment,
+              Antarctica boasts a unique and fragile ecosystem, where life
+              endures in the form of specially adapted species, such as
+              <span class="highlight"
+                >penguins, seals, and an array of microorganisms.</span
+              >
+            </p>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <div class="tab intro">
+            <p class="animation-show">
+              The continent serves as a
+              <span class="highlight"
+                >critical hub for scientific research,</span
+              >
+              drawing scientists from around the world to study its climate,
+              geology, and biodiversity. With the effects of climate change
+              being acutely observed in this frozen expanse, researchers are
+              particularly focused on understanding how melting ice affects
+              global sea levels and weather patterns. Various international
+              treaties, including the Antarctic Treaty System established in
+              1961, ensure that Antarctica is used exclusively for peaceful and
+              scientific purposes, protecting its pristine environment from
+              exploitation and militarization. The collaborative efforts of
+              numerous countries contribute to ongoing research, offering
+              invaluable insights into the past, present, and future of our
+              planet.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <div class="tab intro">
+            <p
+              class="animation-show mb-1 pb-5"
+              style="border-bottom: 1px solid"
+            >
+              While Antarctica may appear desolate, it is a place of remarkable
+              beauty and resilience. The stark contrast of its icy expanse
+              against the vivid colors of auroras and the dynamic behaviors of
+              its wildlife captivates the imagination. For adventurers and
+              nature enthusiasts alike, the continent offers unparalleled
+              opportunities for exploration and discovery. From witnessing the
+              majestic Emperor penguins huddling against the cold to the
+              breathtaking sight of icebergs drifting in the crystal-clear
+              waters, Antarctica remains one of the last true wildernesses on
+              Earth, a testament to the power and mystery of nature. As the
+              world grapples with environmental challenges, this unique
+              continent
+              <span class="highlight"
+                >stands as both a warning and a beacon of hope for future
+                generations.</span
+              >
+            </p>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row pt-5">
+        <div class="col-md-1"></div>
+        <div class="col-md-12 col-12">
+          <div class="tab intro">
+            <h1 class="animation-show" style="text-align: center" id="mtFuji">
+              About Mount Fuji
+            </h1>
+            <img
+              class="animation-show"
+              src="https://images.unsplash.com/photo-1713346643882-7e185ef424dd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="antarctica"
+            />
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 col-12">
+          <div class="tab intro">
+            <p class="animation-show">
+              Mount Fuji, standing at 3,776 meters, is
+              <span class="highlight">Japan's tallest peak</span> and a symbol
+              of the country’s natural beauty. Its iconic symmetrical cone shape
+              is often capped with snow, creating a breathtaking sight that has
+              inspired artists and poets for centuries. The mountain is located
+              on <span class="highlight">Honshu Island,</span> surrounded by
+              lush forests and serene lakes, making it a popular destination for
+              both tourists and locals seeking adventure and tranquility. Hiking
+              to the summit is a rite of passage for many, with trails that
+              offer stunning views of the surrounding landscape, particularly
+              during sunrise.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 col-12">
+          <div class="tab intro">
+            <p class="animation-show">
+              The cultural significance of Mount Fuji extends beyond its
+              physical beauty. It is deeply rooted in Japanese spirituality and
+              folklore, often regarded as a
+              <span class="highlight">sacred site.</span> Numerous shrines and
+              temples dot the lower slopes, where visitors can pay their
+              respects and soak in the serene atmosphere. The mountain is also a
+              UNESCO World Heritage Site, recognized not only for its natural
+              beauty but also for its historical and cultural importance. Each
+              season transforms the mountain's appearance, with cherry blossoms
+              in spring, vibrant autumn leaves, and the stark white of winter,
+              drawing photographers and nature lovers alike.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 col-12">
+          <div class="tab intro">
+            <p
+              class="animation-show mb-1 pb-5"
+              style="border-bottom: 1px solid"
+            >
+              For those who prefer a more leisurely experience, the areas
+              surrounding Mount Fuji offer plenty of opportunities for
+              <span class="highlight">relaxation and exploration.</span> The
+              nearby Fuji Five Lakes region is perfect for enjoying picturesque
+              views of the mountain while engaging in outdoor activities like
+              boating, fishing, or simply picnicking by the water. Additionally,
+              the hot springs (onsen) in the vicinity provide a chance to unwind
+              while soaking in the natural beauty. Whether climbing to its peak
+              or enjoying the scenery from below, Mount Fuji remains an enduring
+              symbol of Japan's breathtaking landscape and rich cultural
+              heritage.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row pt-5">
+        <div class="col-md-1"></div>
+        <div class="col-md-12 col-12">
+          <div class="tab intro">
+            <h1 class="animation-show" style="text-align: center" id="svalbard">
+              About Svalbard
+            </h1>
+            <img
+              class="animation-show"
+              src="./resources/svalbard1.jpg"
+              alt="antarctica"
+            />
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 col-12">
+          <div class="tab intro">
+            <p class="animation-show">
+              Svalbard, a remote archipelago located halfway between mainland
+              <span class="highlight">Norway and the North Pole,</span> is a
+              land of striking contrasts and natural wonders. Its rugged terrain
+              is characterized by towering mountains, deep fjords, and vast
+              glaciers, creating a breathtaking backdrop for adventurous souls.
+              The region experiences polar climate conditions, with long, dark
+              winters and brief, vibrant summers where the sun never sets. This
+              unique environment supports a rich tapestry of wildlife, including
+              <span class="highlight"
+                >polar bears, reindeer, and a variety of seabirds,</span
+              >
+              making Svalbard a haven for nature enthusiasts and photographers.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 col-12">
+          <div class="tab intro">
+            <p class="animation-show">
+              The history of Svalbard is as captivating as its landscapes.
+              Initially explored by whalers in the 17th century, the archipelago
+              has a storied past of hunting and mining. Today, the town of
+              <span class="highlight">Longyearbyen</span> serves as a vibrant
+              hub for visitors and researchers, offering insights into the
+              region's cultural heritage and scientific endeavors. The Svalbard
+              Global Seed Vault, a remarkable facility built into a mountain,
+              stores seeds from around the world, symbolizing hope for global
+              biodiversity amid climate change and environmental challenges.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 col-12">
+          <div class="tab intro">
+            <p
+              class="animation-show mb-1 pb-5"
+              style="border-bottom: 1px solid"
+            >
+              For those seeking adventure, Svalbard offers an array of outdoor
+              activities year-round. In summer, kayaking, hiking, and wildlife
+              watching attract visitors eager to experience the Midnight Sun,
+              while winter transforms the landscape into a playground for
+              snowmobiles, dog sledding, and skiing. The breathtaking beauty of
+              the <span class="highlight">Northern Lights</span> during the
+              colder months adds a magical touch to any visit. Svalbard is not
+              just a destination; it's an expedition into one of the last great
+              wildernesses on Earth, where nature reigns supreme and adventure
+              awaits at every turn.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row pt-5">
+        <div class="col-md-1"></div>
+        <div class="col-md-12 col-12">
+          <div class="tab intro">
+            <h1 class="animation-show" style="text-align: center" id="bolivia">
+              About Salar De Uyuni
+            </h1>
+            <img
+              class="animation-show"
+              src="./resources/salarDeUyuni1.jpg"
+              alt="antarctica"
+            />
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 col-12">
+          <div class="tab intro">
+            <p class="animation-show">
+              Salar de Uyuni, located in
+              <span class="highlight">Southwest Bolivia,</span> is the largest
+              salt flat in the world and a mesmerizing natural wonder. Spanning
+              over 10,000 square kilometers, this otherworldly landscape is
+              primarily composed of salt crust, which creates a strikingly flat
+              and reflective surface. During the wet season, a thin layer of
+              water covers the salt crust, transforming the area into a
+              <span class="highlight">breathtaking mirror</span> that reflects
+              the sky, giving visitors the illusion of walking on clouds. This
+              phenomenon attracts photographers and travelers from around the
+              globe, eager to capture its surreal beauty.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 col-12">
+          <div class="tab intro">
+            <p class="animation-show">
+              The history of Salar de Uyuni is deeply intertwined with Bolivia's
+              cultural and economic fabric. The salt flat was formed from the
+              evaporation of ancient lakes, and today, it is home to rich
+              deposits of lithium, an essential component for batteries. The
+              surrounding areas boast unique ecosystems, including colorful
+              lagoons populated by <span class="highlight">flamingos</span> and
+              diverse wildlife adapted to the harsh environment. Traditional
+              communities, such as the
+              <span class="highlight">indigenous Aymara,</span> have thrived in
+              the region for centuries, offering insights into local culture and
+              traditions.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 col-12">
+          <div class="tab intro">
+            <p
+              class="animation-show mb-1 pb-5"
+              style="border-bottom: 1px solid"
+            >
+              Visiting Salar de Uyuni offers a range of adventures, from guided
+              tours that showcase its stunning landscapes to opportunities for
+              exploration on foot, by bike, or in 4x4 vehicles. Unique
+              attractions include the
+              <span class="highlight">eerie Isla Incahuasi,</span> a
+              cactus-covered island in the middle of the salt flat, and the
+              captivating train graveyard, where rusted locomotives tell tales
+              of the past. Whether during the dazzling wet season or the stark,
+              dry months, Salar de Uyuni remains a captivating destination,
+              inviting exploration and contemplation in one of nature's most
+              remarkable settings.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-12" style="height: 100px"></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item">
+          <a
+            href="index.html"
+            class="nav-link footer-link"
+            aria-label="Go to Home"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="index.html#collection"
+            class="nav-link footer-link"
+            aria-label="Go to Collection"
+            >Collection</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="gallery.html"
+            class="nav-link footer-link"
+            aria-label="Go to Gallery"
+            >Gallery</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="../../index.html"
+            class="nav-link footer-link"
+            aria-label="Go to Creator"
+            >Creator</a
+          >
+        </li>
+      </ul>
+      <p class="text-center text-white">© 2024 KARMKEN, All Rights Reserved</p>
+    </footer>
+
+    <script>
+      // Initialize colorMode variable
+      let colorMode = localStorage.getItem("theme") || "dark"; // Default to 'dark' if not set
+
+      // Load previous theme on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("body")
+          .setAttribute("data-bs-theme", colorMode);
+
+        // Update background images
+        updateBackgroundImages();
+      });
+
+      // Function to change the theme
+      function changeMode() {
+        colorMode = colorMode === "dark" ? "maroon" : "dark"; // Toggle between themes
+        document
+          .getElementById("body")
+          .setAttribute("data-bs-theme", colorMode);
+
+        // Save the selected theme to local storage
+        localStorage.setItem("theme", colorMode);
+
+        // Update background images after changing the theme
+        updateBackgroundImages();
+      }
+
+      // Function to update background images based on the theme
+      function updateBackgroundImages() {
+        var bgImages = [
+          `resources/0${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/1${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/2${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/3${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/4${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/5${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/6${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/7${colorMode === "dark" ? "(D)" : ""}.png`,
+          `resources/8${colorMode === "dark" ? "(D)" : ""}.png`,
+        ];
+
+        for (let i = 0; i < 9; i++) {
+          var bgElement = document.getElementById(`bg${i + 1}`);
+          bgElement.style.backgroundImage = `url("${bgImages[i]}")`;
+        }
+      }
+      // ScrollSection
+      function scrollToSection(sectionID) {
+        const section = document.getElementById(sectionID);
+        const offset = 110;
+        const elementPosition =
+          section.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+
+      // <!-- Functionality of Collapse -->
+      function expandContent() {
+        var moreInfo = document.getElementById("moreInfo");
+        var btnExpand = document.getElementById("btnExpand");
+        var gapExpand = document.getElementById("gapExpand");
+
+        if (
+          moreInfo.style.display === "none" ||
+          moreInfo.style.display === ""
+        ) {
+          gapExpand.style.height = "10px";
+          moreInfo.style.display = "block";
+          btnExpand.innerHTML = "Hide";
+        } else {
+          gapExpand.style.height = "50px";
+          moreInfo.style.display = "none";
+          btnExpand.innerHTML = "Learn More";
+        }
+      }
+      let animationTriggered = false;
+
+      document.addEventListener("scroll", function () {
+        const bannerTitle = document.querySelector(".banner h1");
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 0 && !animationTriggered) {
+          bannerTitle.classList.remove("animated-title");
+          animationTriggered = true;
+        } else if (scrollPosition === 0 && !animationTriggered) {
+          bannerTitle.classList.add("animated-title");
+        }
+      });
+    </script>
+
+    <script src="scroll.js"></script>
+    <script src="slider.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
