@@ -1,117 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .home-content h1 {
-          font-size: 2.5rem;
-        }
-        .project-button {
-          font-size: 1rem;
-          padding: 0.8rem 1.5rem;
-        }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .home-content h1 {
+        font-size: 2.5rem;
       }
 
-      @media (max-width: 480px) {
-        .home-content h1 {
-          font-size: 2rem;
-        }
-        .project-button {
-          font-size: 0.9rem;
-          padding: 0.7rem 1.2rem;
-        }
-        .projects {
-          width: 90%;
-        }
+      .project-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
       }
-    </style>
-  </head>
-  <body>
-    <header class="header">
-      <a href="#" class="logo">KARM.</a>
+    }
 
-      <nav class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#" class="active">Projects</a>
-        <a href="#">Contact</a>
-      </nav>
-    </header>
-    <!-- Starry Background -->
-    <div class="stars">
-      <!-- Create 100 stars dynamically -->
-      <script>
-        for (let i = 0; i < 100; i++) {
-          let star = document.createElement("div");
-          star.className = "star";
-          star.style.left = Math.random() * 100 + "vw";
-          star.style.top = Math.random() * 150 + "vh";
-          star.style.animationDelay = Math.random() * 1 + "s";
-          star.style.animationDuration = Math.random() * 10 + 4 + "s";
-          document.querySelector(".stars").appendChild(star);
-        }
-      </script>
+    @media (max-width: 480px) {
+      .home-content h1 {
+        font-size: 2rem;
+      }
+
+      .project-button {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+      }
+
+      .projects {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <a href="#" class="logo">KARM.</a>
+
+    <nav class="navbar">
+      <a href="../index.html">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#" class="active">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+  <!-- Starry Background -->
+  <div class="stars">
+    <!-- Create 100 stars dynamically -->
+    <script>
+      for (let i = 0; i < 100; i++) {
+        let star = document.createElement("div");
+        star.className = "star";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.top = Math.random() * 150 + "vh";
+        star.style.animationDelay = Math.random() * 1 + "s";
+        star.style.animationDuration = Math.random() * 10 + 4 + "s";
+        document.querySelector(".stars").appendChild(star);
+      }
+    </script>
+  </div>
+
+  <section class="home">
+    <div class="home-content">
+      <h1>My Projects</h1>
+      <div class="projects">
+        <button class="project-button" onclick="window.location.href='project1/project1.html';">
+          Device
+        </button>
+        <button class="project-button" onclick="window.location.href='project2/index.html';">
+          Place
+        </button>
+        <button class="project-button" onclick="window.location.href='project3/index.html';">
+          Gallery
+        </button>
+        <button class="project-button" onclick="window.location.href='https://example.com/project4';">
+          Project 4
+        </button>
+        <button class="project-button" href="https://example.com/project5" ;>
+          Project 5
+        </button>
+      </div>
     </div>
 
-    <section class="home">
-      <div class="home-content">
-        <h1>My Projects</h1>
-        <div class="projects">
-          <button
-            class="project-button"
-            onclick="window.location.href='project1/project1.html';"
-          >
-            Device
-          </button>
-          <button
-            class="project-button"
-            onclick="window.location.href='project2/index.html';"
-          >
-            Place
-          </button>
-          <button
-            class="project-button"
-            onclick="window.location.href='project3/index.html';"
-          >
-            Gallery
-          </button>
-          <button
-            class="project-button"
-            onclick="window.location.href='https://example.com/project4';"
-          >
-            Project 4
-          </button>
-          <button class="project-button" href="https://example.com/project5" ;>
-            Project 5
-          </button>
-        </div>
-      </div>
+    <div class="home-sci">
+      <a href="https://www.facebook.com/mama.momo1234567890"><i class="bx bxl-facebook"></i></a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ken.aeron.milorin@gmail.com&su=Subject%20Here&body=Message%20Here"
+        target="_blank"><i class="bx bxl-gmail"></i></a>
+      <a href="https://github.com/KARMken"><i class="bx bxl-github"></i></a>
+    </div>
+  </section>
+</body>
 
-      <div class="home-sci">
-        <a href="https://www.facebook.com/mama.momo1234567890"
-          ><i class="bx bxl-facebook"></i
-        ></a>
-        <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=ken.aeron.milorin@gmail.com&su=Subject%20Here&body=Message%20Here"
-          target="_blank"
-          ><i class="bx bxl-gmail"></i
-        ></a>
-        <a href="https://github.com/KARMken"><i class="bx bxl-github"></i></a>
-      </div>
-    </section>
-  </body>
 </html>
