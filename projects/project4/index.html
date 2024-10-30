@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Harry Potter</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Animate css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styleIndex.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Cursor -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><img src="assets/logo.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-list">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./staff.html">Staff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./students.html">Students</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Banner -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col p-0">
+          <div class="banner">
+            <div class="bg bg-1" id="bg1"></div>
+            <div class="bg bg-2" id="bg2"></div>
+            <div class="bg bg-3" id="bg3"></div>
+            <h1 class="animated-title">Welcome to Hogwarts</h1>
+            <div class="bg bg-4" id="bg4"></div>
+            <div class="bg bg-5" id="bg5"></div>
+            <div class="bg bg-6" id="bg6"></div>
+            <div class="bg bg-7" id="bg7"></div>
+            <div class="bg bg-8" id="bg7"></div>
+            <div class="bg bg-9" id="bg7"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="containerInfo">
+      <div class="row" style="height: 100px"></div>
+      <div class="row">
+        <div
+          class="wow animate__animated animate__pulse animate__infinite infinite col-12 container-About"
+        >
+          About Website
+        </div>
+        <div class="row" style="height: 20px"></div>
+        <div class="row">
+          <div
+            class="wow animate__animated animate__fadeInUp col-12"
+            data-wow-offset="20"
+          >
+            <div class="container-About1">
+              <p>
+                This website uses a public harry potter API to fetch data from
+                and show them accordingly. Find every student and staff in the
+                harry potter series.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="containerInfo">
+      <div class="row mt-0">
+        <div class="col-md-2 col-1"></div>
+        <div class="col-md-8 col-10">
+          <div class="container-About">
+            <button
+              class="wow animate__animated animate__fadeInUp button-Learn"
+            >
+              <a href="https://potterdb.com/" target="_blank">Learn More</a>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-2 col-1"></div>
+      </div>
+      <div class="row" style="height: 100px"></div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 col-1"></div>
+        <div class="wow animate__animated animate__fadeInUp col-md-8 col-10">
+          <div
+            id="carouselExampleFade"
+            class="carousel slide carousel-fade"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner" id="carouselItems">
+              <!-- Dynamic carousel items will be inserted here -->
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleFade"
+              data-bs-slide="prev"
+            >
+              <svg
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+                width="30"
+                height="30"
+                fill="#d6b247"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.3 1.3a1 1 0 0 1 0 1.4L5.4 8l5.9 5.3a1 1 0 0 1-1.4 1.4l-7-6.3a1 1 0 0 1 0-1.4l7-6.3a1 1 0 0 1 1.4 0z"
+                />
+              </svg>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleFade"
+              data-bs-slide="next"
+            >
+              <svg
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+                width="30"
+                height="30"
+                fill="#d6b247"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.7 1.3a1 1 0 0 0 0 1.4L10.6 8 4.7 13.7a1 1 0 1 0 1.4 1.4l7-6.3a1 1 0 0 0 0-1.4l-7-6.3a1 1 0 0 0-1.4 0z"
+                />
+              </svg>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-2 col-1"></div>
+      </div>
+      <div class="row" style="height: 100px"></div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 col-1"></div>
+        <div class="col-md-8 col-10">
+          <div class="container-About">
+            <p class="wow animate__animated animate__fadeInUp">Hogwarts</p>
+            <div
+              class="wow animate__animated animate__fadeInUp container-About1"
+            >
+              Hogwarts was built in a valley area — surrounding mountains were
+              part of the landscape — with the fairly large Great Lake to the
+              south of the main building. The huge main oak front doors that led
+              into the Entrance Hall faced west, and opened up to sloping lawns.
+              The deep Forbidden Forest extended around to the west of the
+              castle. There were also exterior greenhouses and vegetablepatches
+              on the school grounds.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 col-1"></div>
+      </div>
+    </div>
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item">
+          <a
+            href="index.html"
+            class="nav-link footer-link"
+            aria-label="Go to Home"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="staff.html"
+            class="nav-link footer-link"
+            aria-label="Go to Collection"
+            >Staff</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="students.html"
+            class="nav-link footer-link"
+            aria-label="Go to Gallery"
+            >Students</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="../../index.html"
+            class="nav-link footer-link"
+            aria-label="Go to Creator"
+            >Creator</a
+          >
+        </li>
+      </ul>
+      <p class="text-center text-white">© 2024 KARMKEN, All Rights Reserved</p>
+    </footer>
+    <!-- Harry Potter Carousel -->
+    <script>
+      const defaultImages = {
+        male: "assets/male.png",
+        female: "assets/female.png",
+      };
+
+      async function fetchHarryPotterData() {
+        try {
+          const response = await fetch(
+            "https://hp-api.onrender.com/api/characters"
+          );
+          const characters = await response.json();
+
+          const carouselItems = document.getElementById("carouselItems");
+
+          // Clear existing items
+          carouselItems.innerHTML = "";
+
+          // Loop through characters and create carousel items
+          characters.forEach((character, index) => {
+            const isActive = index === 0 ? "active" : ""; // Set first item as active
+
+            const carouselItem = document.createElement("div");
+            carouselItem.className = `carousel-item ${isActive}`;
+
+            const img = document.createElement("img");
+            // Check if the character has an image
+            img.src =
+              character.image && character.image.trim() !== ""
+                ? character.image
+                : defaultImages[character.gender] || defaultImages.male; // Fallback to male if gender is unknown
+            img.className = "img-fluid";
+            img.alt = character.name;
+
+            const caption = document.createElement("div");
+            caption.className = "carousel-caption";
+
+            const captionText = document.createElement("h5");
+            captionText.innerText = character.name;
+
+            // Append elements
+            caption.appendChild(captionText);
+            carouselItem.appendChild(img);
+            carouselItem.appendChild(caption);
+            carouselItems.appendChild(carouselItem);
+          });
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      }
+      fetchHarryPotterData();
+    </script>
+    <!-- Wow Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <script>
+      let animationTriggered = false;
+
+      document.addEventListener("scroll", function () {
+        const bannerTitle = document.querySelector(".banner h1");
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 0 && !animationTriggered) {
+          bannerTitle.classList.remove("animated-title");
+          animationTriggered = true;
+        } else if (scrollPosition === 0 && !animationTriggered) {
+          bannerTitle.classList.add("animated-title");
+        }
+      });
+    </script>
+    <script src="cursor.js"></script>
+    <script src="banner.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

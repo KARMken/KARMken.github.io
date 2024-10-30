@@ -1,0 +1,339 @@
+@font-face {
+  font-family: "Legendary Runes Free Trial";
+  src: url("font/Legendary Runes Free Trial.otf");
+}
+
+/* Cursor */
+body {
+  cursor: url(assets/wand.cur), auto;
+}
+
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999;
+}
+
+/* ScrollBar*/
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(28, 72, 160, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6b247;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(28, 72, 160);
+}
+/* Nav */
+.navbar {
+  font-family: "Legendary Runes Free Trial", sans-serif;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  font-size: 15px;
+  background-color: #00011e;
+  overflow-x: hidden;
+}
+
+.navbar-toggler,
+.navbar-toggler-icon {
+  border-color: #d6b247;
+}
+
+.navbar-brand {
+  margin-left: 20px;
+}
+.navbar,
+.banner,
+.container,
+.containerInfo {
+  width: 100%;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.navbar img {
+  width: 120px;
+}
+
+.navbar-nav .nav-link {
+  color: rgb(225, 225, 232);
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  cursor: url(assets/wandP.cur), auto;
+  color: #d6b247;
+  border: 2px solid #d6b247;
+  border-radius: 10px;
+  text-decoration: box;
+  font-weight: bold;
+}
+
+/* Parallax Banner */
+.banner {
+  background-color: #00011e;
+  height: 120vh;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;
+}
+.banner .bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: auto 100%;
+  background-position: center bottom;
+  transition: transform 0.2s ease;
+}
+.banner .bg-1 {
+  background-image: url("assets/bg.png");
+}
+.banner .bg-2 {
+  background-image: url("assets/mist.png");
+}
+.banner .bg-3 {
+  background-image: url("assets/human.png");
+}
+.banner .bg-4 {
+  background-image: url("assets/mist1.png");
+}
+.banner .bg-5 {
+  background-image: url("assets/mist2.png");
+}
+.banner .bg-6 {
+  background-image: url("assets/dragon.png");
+}
+.banner .bg-7 {
+  background-image: url("assets/owl.png");
+}
+.banner .bg-8 {
+  background-image: url("assets/foreground-back.webp");
+}
+.banner .bg-9 {
+  background-image: url("assets/foreground-front.webp");
+}
+
+/* Text */
+.banner h1 {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Legendary Runes Free Trial", sans-serif;
+  letter-spacing: 2px;
+  font-size: 4em;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #d6b247;
+  transition: 0.3s;
+  cursor: default;
+  z-index: 1001;
+}
+.banner h1:hover {
+  cursor: url(assets/wandP.cur), auto;
+  letter-spacing: 0.1em;
+  color: rgb(28, 72, 160);
+}
+
+.footer-link {
+  color: rgb(210, 210, 210);
+  transition: color 0.3s ease;
+  font-family: "Legendary Runes Free Trial", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.footer-link:hover {
+  cursor: url(assets/wandP.cur), auto;
+
+  color: #d6b247;
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-title {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Legendary Runes Free Trial", sans-serif;
+  letter-spacing: 2px;
+  font-size: 4em;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #d6b247;
+  cursor: default;
+  z-index: 1000;
+  animation: slideUp 2s ease forwards;
+}
+
+/* Animation CSS  */
+.animate__animated.animate__fadeInUp {
+  --animate-duration: 2s;
+}
+
+.container-About {
+  font-family: "Legendary Runes Free Trial", sans-serif;
+  letter-spacing: 2px;
+  font-size: 4em;
+  color: #d6b247;
+  text-align: center;
+}
+
+.container-About1 {
+  font-family: "Legendary Runes Free Trial", sans-serif;
+  font-size: 20px;
+  color: #9d7f23;
+  text-align: center;
+}
+
+.container-About1 p {
+  transition: letter-spacing 0.8s;
+}
+.container-About1 p:hover {
+  letter-spacing: 2px;
+  cursor: url(assets/wandP.cur), auto;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 2px #cce0ff, 0 0 4px #003366, 0 0 6px #001f3f;
+  }
+
+  to {
+    text-shadow: 0 0 5px #cce0ff, 0 0 6px #003366, 0 0 8px #001f3f;
+  }
+}
+.button-Learn,
+.button-Learn a {
+  padding: 10px 40px;
+  border: none;
+  border-radius: 20px;
+  font-family: "Legendary Runes Free Trial", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  background-color: #9d7f23;
+  color: rgb(28, 72, 160);
+  font-weight: bold;
+  transition: 1s;
+  cursor: url(assets/wandP.cur), auto;
+}
+
+.button-Learn:hover {
+  letter-spacing: 6px;
+  cursor: url(assets/wandP.cur), auto;
+}
+.button-Learn a:hover {
+  letter-spacing: 6px;
+  cursor: url(assets/wandP.cur), auto;
+}
+
+/* Carousel */
+.carousel {
+  width: 500px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.carousel-inner {
+  width: auto;
+  height: 700px;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1.2);
+  object-fit: cover;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-caption h5 {
+  font-family: "Legendary Runes Free Trial", sans-serif;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #d6b247;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon:hover,
+.carousel-control-next:hover .carousel-control-next-icon:hover {
+  cursor: url(assets/wandP.cur), auto;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .carousel {
+    width: 90%; /* Adjust width for tablets */
+  }
+
+  .carousel-inner {
+    height: 500px; /* Adjust height for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel {
+    width: 100%; /* Full width for mobile */
+  }
+
+  .carousel-inner {
+    height: 400px; /* Adjust height for mobile */
+  }
+}

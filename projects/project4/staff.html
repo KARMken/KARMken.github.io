@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff | Harry Potter</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Animate css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .footer-link {
+        color: rgb(210, 210, 210);
+        transition: color 0.3s ease;
+        font-family: "Legendary Runes Free Trial", sans-serif;
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+
+      .footer-link:hover {
+        cursor: url(assets/wandP.cur), auto;
+
+        color: #d6b247;
+      }
+      @font-face {
+        font-family: "Legendary Runes Free Trial";
+        src: url("font/Legendary Runes Free Trial.otf");
+      }
+      /* Animation CSS  */
+      .animate__animated.animate__fadeInUp {
+        --animate-duration: 2s;
+      }
+
+      /* Cursor */
+      body {
+        background-color: #00011e;
+        cursor: url(./assets/wand.cur), auto;
+        background-image: url("./assets/bg.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        overflow-x: hidden;
+      }
+
+      .circle {
+        height: 24px;
+        width: 24px;
+        border-radius: 24px;
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 99999999;
+      }
+      /* Animated Title */
+      .animated-title {
+        animation: slideUp 2s ease forwards;
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(-100px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* ScrollBar*/
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: rgb(28, 72, 160, 0.2);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #d6b247;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(28, 72, 160);
+      }
+      /* Nav */
+      .navbar {
+        font-family: "Legendary Runes Free Trial", sans-serif;
+        letter-spacing: 2px;
+        font-size: 20px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .navbar-brand {
+        margin-left: 20px;
+      }
+      .navbar,
+      .banner,
+      .container,
+      .containerInfo,
+      .container-fluid {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+
+      .navbar img {
+        width: 120px;
+      }
+
+      .navbar-nav .nav-link {
+        color: rgb(225, 225, 232);
+        margin: 0 15px;
+        font-weight: bold;
+      }
+
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link.active {
+        cursor: url(./assets/wandP.cur), auto;
+        color: #d6b247;
+        border: 2px solid #d6b247;
+        border-radius: 10px;
+        text-decoration: box;
+        font-weight: bold;
+      }
+
+      .loadingBar {
+        background-color: #d6b247;
+        height: 5px;
+        width: 0%;
+      }
+
+      .loadingBarContainer {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .container-Info {
+        font-family: "Legendary Runes Free Trial", sans-serif;
+        letter-spacing: 2px;
+        font-size: 50px;
+        color: #d6b247;
+      }
+
+      .title-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .title-container h1 {
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 10px 20px;
+        border-radius: 10px;
+        transition: color 0.4s ease-in;
+      }
+
+      /* Card Layout */
+      .card {
+        transform: scale(0.97);
+        width: 100%;
+        border: 1px solid rgb(28, 72, 160);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        background-color: #00011e;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        cursor: url(assets/wandP.cur), auto;
+        transform: scale(1);
+      }
+
+      .card-img-top {
+        width: 100%;
+        height: 400px;
+        transition: filter 0.3s ease;
+      }
+
+      .card:hover .card-img-top {
+        filter: blur(4px);
+      }
+
+      .card-title {
+        font-family: "Legendary Runes Free Trial", sans-serif;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #d6b247;
+      }
+
+      .card-text {
+        font-size: 1em;
+        margin-bottom: 10px;
+        color: #ad9039;
+      }
+
+      .house-logo {
+        position: absolute;
+        top: 80%;
+        left: 80%;
+        width: 40px;
+        height: auto;
+        margin-top: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover .house-logo {
+        transform: scale(1.5);
+      }
+
+      .species-overlay {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ad9039;
+        font-family: "Legendary Runes Free Trial", sans-serif;
+        font-size: 1.5em;
+        letter-spacing: 2px;
+        background-color: rgba(0, 1, 30, 0.5);
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 1em;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .card:hover .species-overlay {
+        opacity: 1;
+      }
+      .title-container h1:hover {
+        color: #00011e;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cursor -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <!-- Loading Bar -->
+    <div class="container-fluid p-0 loadingBarContainer">
+      <div class="loadingBar" id="loadingBar"></div>
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><img src="assets/logo.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-list">
+            <li class="nav-item">
+              <a class="nav-link" href="./">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Staff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./students.html">Students</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Container -->
+    <div class="container">
+      <div class="row" style="height: 30px"></div>
+      <div class="row mt-5">
+        <div class="title-container col-12">
+          <h1 class="container-Info animated-title">Staff</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid p-0">
+      <div class="row" id="cardContainer">
+        <!-- Populated with js -->
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="py-3 mt-4" style="background-color: rgba(0, 0, 0, 0.4)">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item">
+          <a
+            href="index.html"
+            class="nav-link footer-link"
+            aria-label="Go to Home"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="staff.html"
+            class="nav-link footer-link"
+            aria-label="Go to Collection"
+            >Staff</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="students.html"
+            class="nav-link footer-link"
+            aria-label="Go to Gallery"
+            >Students</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="../../index.html"
+            class="nav-link footer-link"
+            aria-label="Go to Creator"
+            >Creator</a
+          >
+        </li>
+      </ul>
+      <p class="text-center text-white">© 2024 KARMKEN, All Rights Reserved</p>
+    </footer>
+    <!-- Wow Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <!-- Cursor -->
+    <script src="cursor.js"></script>
+    <!-- Script for API fetching -->
+    <script>
+      const houses = {
+        gryffindor: "assets/gryffindor.webp",
+        hufflepuff: "assets/hufflepuff.webp",
+        ravenclaw: "assets/ravenclaw.webp",
+        slytherin: "assets/slytherin.webp",
+        unknown: "assets/unknown.webp",
+      };
+
+      var cardContainer = document.getElementById("cardContainer");
+      var loadingBar = document.getElementById("loadingBar");
+
+      const fetchHarryPotterData = async () => {
+        try {
+          const response = await fetch(
+            "https://hp-api.onrender.com/api/characters"
+          );
+          const characters = await response.json();
+
+          // Filter for staff members
+          const staffMembers = characters.filter(
+            (character) => character.hogwartsStaff
+          );
+
+          // Clear the card container
+          cardContainer.innerHTML = "";
+
+          for (let i = 0; i < staffMembers.length; i++) {
+            const character = staffMembers[i];
+
+            // Add a delay for loading each character
+            await new Promise((resolve) => setTimeout(resolve, 50));
+
+            const characterImage = character.image
+              ? character.image
+              : character.gender === "female"
+              ? "assets/female.png"
+              : "assets/male.png";
+
+            // Determine house logo
+            const houseLogo =
+              houses[character.house?.toLowerCase()] || houses.unknown;
+
+            // Create a card for each character
+            cardContainer.innerHTML += `
+            
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <a href="view.html?characterName=${encodeURIComponent(
+            character.name
+          )}">
+          <div class="card rounded-5 my-0">
+            <img class="card-img-top" src="${characterImage}" alt="${
+              character.name
+            }">
+            <div class="species-overlay">${character.species || "Unknown"}</div>
+            <div class="card-body">
+              <h5 class="card-title">${character.name}</h5>
+              <p class="card-text">Date of Birth: <span class="dob">${
+                character.dateOfBirth || "Unknown"
+              }</span></p>
+              <img class="house-logo" src="${houseLogo}" alt="${
+              character.house
+            } Logo">
+            </div>
+          </div>
+        </a>
+        </div>
+      `;
+
+            // Update loading bar
+            loadingBar.style.width =
+              ((i + 1) / staffMembers.length) * 100 + "%";
+          }
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+
+      // Call the fetch function
+      fetchHarryPotterData();
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
