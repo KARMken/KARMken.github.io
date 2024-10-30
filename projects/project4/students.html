@@ -408,7 +408,7 @@
       <div class="row" style="height: 30px"></div>
       <div class="row mt-5">
         <div class="title-container col-12">
-          <h1 class="container-Info animated-title">Students</h1>
+          <h1 class="container-Info animated-title" id="title">Students</h1>
         </div>
       </div>
     </div>
@@ -500,7 +500,7 @@
       var nextButton = document.getElementById("nextButton");
       var pageInfo = document.getElementById("pageInfo");
 
-      const itemsPerPage = 20;
+      const itemsPerPage = 12;
       let currentPage = 1;
       let students = [];
 
@@ -617,6 +617,9 @@
         if (currentPage > 1) {
           currentPage--;
           displayPage(currentPage);
+
+          const targetElement = document.getElementById("title");
+          targetElement.scrollIntoView({ behavior: "smooth" });
         }
       });
 
@@ -624,6 +627,9 @@
         if (currentPage < Math.ceil(students.length / itemsPerPage)) {
           currentPage++;
           displayPage(currentPage);
+
+          const targetElement = document.getElementById("title");
+          targetElement.scrollIntoView({ behavior: "smooth" });
         }
       });
 

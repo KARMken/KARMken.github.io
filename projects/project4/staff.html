@@ -270,6 +270,55 @@
       .card:hover .species-overlay {
         opacity: 1;
       }
+      /* Pagination CSS */
+
+      .btnPrev {
+        padding-bottom: 40px;
+      }
+      .btnNext {
+        padding-bottom: 40px;
+      }
+      .btnPrev,
+      .btnNext {
+        color: #00011e;
+        background-color: #d6b247;
+        width: 100px;
+        height: 10px;
+        padding-top: 10px;
+        border: none;
+        border-radius: 20px;
+        font-family: "Legendary Runes Free Trial", sans-serif;
+        font-size: 20px;
+        letter-spacing: 2px;
+        background-color: #9d7f23;
+        color: rgb(28, 72, 160);
+        font-weight: bold;
+        transition: 1s;
+        cursor: url(assets/wandP.cur), auto;
+      }
+
+      .btnPrev:hover,
+      .btnNext:hover {
+        background-color: #d6b247;
+        cursor: url(assets/wandP.cur), auto;
+      }
+
+      .pInfo-Container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0;
+      }
+      .pInfo {
+        font-family: "Legendary Runes Free Trial", sans-serif;
+        font-size: 30px;
+        letter-spacing: 2px;
+        width: 200px;
+        border-radius: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #d6b247;
+      }
       .title-container h1:hover {
         color: #00011e;
       }
@@ -354,7 +403,7 @@
       <div class="row" style="height: 30px"></div>
       <div class="row mt-5">
         <div class="title-container col-12">
-          <h1 class="container-Info animated-title">Staff</h1>
+          <h1 class="container-Info animated-title" id="title">Staff</h1>
         </div>
       </div>
     </div>
@@ -362,6 +411,27 @@
       <div class="row" id="cardContainer">
         <!-- Populated with js -->
       </div>
+    </div>
+    <!-- Pagination -->
+    <div class="pagination-container text-center mt-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="pInfo-Container">
+            <span
+              id="pageInfo"
+              class="wow animate__animated animate__slideInUp pInfo"
+              >Page 1</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 pt-1">
+          <button id="prevButton" class="btn btnPrev" disabled>Previous</button>
+          <button id="nextButton" class="btn btnNext">Next</button>
+        </div>
+      </div>
+      <div class="row" style="height: 50px"></div>
     </div>
     <!-- Footer -->
     <footer class="py-3 mt-4" style="background-color: rgba(0, 0, 0, 0.4)">
@@ -420,6 +490,13 @@
 
       var cardContainer = document.getElementById("cardContainer");
       var loadingBar = document.getElementById("loadingBar");
+      var prevButton = document.getElementById("prevButton");
+      var nextButton = document.getElementById("nextButton");
+      var pageInfo = document.getElementById("pageInfo");
+
+      const itemsPerPage = 12;
+      let currentPage = 1;
+      let staffs = [];
 
       const fetchHarryPotterData = async () => {
         try {
@@ -429,19 +506,16 @@
           const characters = await response.json();
 
           // Filter for staff members
-          const staffMembers = characters.filter(
-            (character) => character.hogwartsStaff
-          );
+          staffs = characters.filter((character) => character.hogwartsStaff);
 
           // Clear the card container
           cardContainer.innerHTML = "";
 
-          for (let i = 0; i < staffMembers.length; i++) {
-            const character = staffMembers[i];
-
+          for (let i = 0; i < staffs.length; i++) {
             // Add a delay for loading each character
             await new Promise((resolve) => setTimeout(resolve, 50));
 
+            const character = staffs[i];
             const characterImage = character.image
               ? character.image
               : character.gender === "female"
@@ -454,11 +528,7 @@
 
             // Create a card for each character
             cardContainer.innerHTML += `
-            
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <a href="view.html?characterName=${encodeURIComponent(
-            character.name
-          )}">
           <div class="card rounded-5 my-0">
             <img class="card-img-top" src="${characterImage}" alt="${
               character.name
@@ -474,20 +544,91 @@
             } Logo">
             </div>
           </div>
-        </a>
         </div>
       `;
-
+            displayPage(currentPage);
             // Update loading bar
-            loadingBar.style.width =
-              ((i + 1) / staffMembers.length) * 100 + "%";
+            loadingBar.style.width = ((i + 1) / staffs.length) * 100 + "%";
           }
         } catch (error) {
           console.error("Error fetching data:", error);
         }
       };
 
-      // Call the fetch function
+      const displayPage = (page) => {
+        // Clear current cards
+        cardContainer.innerHTML = "";
+
+        // Calculate start and end indices for the current page
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const paginatedStaffs = staffs.slice(start, end);
+
+        paginatedStaffs.forEach((character) => {
+          const characterImage = character.image
+            ? character.image
+            : character.gender === "female"
+            ? "assets/female.png"
+            : "assets/male.png";
+
+          const houseLogo =
+            houses[character.house?.toLowerCase()] || houses.unknown;
+
+          // Create a card for each student
+          cardContainer.innerHTML += `
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="view.html?characterName=${encodeURIComponent(character.name)}">
+        <div class="card rounded-5 my-0">
+          <img class="card-img-top" src="${characterImage}" alt="${
+            character.name
+          }">
+          <div class="species-overlay">${character.species || "Unknown"}</div>
+          <div class="card-body">
+            <h5 class="card-title">${character.name}</h5>
+            <p class="card-text">Date of Birth: <span class="dob">${
+              character.dateOfBirth || "Unknown"
+            }</span></p>
+            <img class="house-logo" src="${houseLogo}" alt="${
+            character.house
+          } Logo">
+          </div>
+        </div>
+        </a>
+      </div>
+    `;
+        });
+
+        // Update loading bar to complete
+        loadingBar.style.width = "100%";
+
+        // Update pagination buttons
+        prevButton.disabled = currentPage === 1;
+        nextButton.disabled =
+          currentPage >= Math.ceil(staffs.length / itemsPerPage);
+        pageInfo.textContent = `Page ${currentPage}`;
+      };
+
+      // Event listeners for pagination buttons
+      prevButton.addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          displayPage(currentPage);
+
+          const targetElement = document.getElementById("title");
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+
+      nextButton.addEventListener("click", () => {
+        if (currentPage < Math.ceil(staffs.length / itemsPerPage)) {
+          currentPage++;
+          displayPage(currentPage);
+
+          const targetElement = document.getElementById("title");
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+
       fetchHarryPotterData();
     </script>
     <script
