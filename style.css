@@ -349,10 +349,9 @@ body {
 }
 
 .tech .icons {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
   margin-bottom: 20px;
 }
 
@@ -362,21 +361,31 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 193px;
+  width: 100%;
   border-radius: 5px;
   height: 150px;
-  cursor: pointer;
+  cursor: default;
   transition: 0.1s ease;
 }
 
-.tech .icons .icon:hover {
-  background-color: var(--quarto-color);
+@media (max-width: 768px) {
+  .tech .icons {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
 }
 
-.tech .icons .icon h5 {
-  font-weight: 600;
-  margin-bottom: 0px;
-  font-size: 20px;
+@media (max-width: 576px) {
+  .tech .icons {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .tech .icons .icon {
+    height: 120px;
+  }
+}
+
+.tech .icons .icon i:hover {
+  font-size: 60px;
 }
 
 .tech .icons .icon h3 {
@@ -387,6 +396,7 @@ body {
 
 .tech .icons .icon i {
   font-size: 40px;
+  z-index: 1;
 }
 
 .fade-in-on-scroll {
