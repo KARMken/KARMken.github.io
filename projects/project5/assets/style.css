@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "Avengers";
+  src: url("fonts/AVENGEANCE HEROIC AVENGER BD.otf") format("opentype"),
+    url("fonts/AVENGEANCE HEROIC AVENGER BD.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+.banner {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.banner .content {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.filter {
+  position: absolute;
+  top: 25vh;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.banner .content .title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+  font-family: "Avengers";
+  font-size: 9em;
+  text-align: center;
+  z-index: 2;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(bgBanner.png);
+  background-size: auto 100%;
+  background-position: center bottom;
+  z-index: -1;
+
+  mask-image: var(--gif-url);
+  mask-size: cover;
+  mask-position: center;
+}
+
+.banner .banner2 {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.item {
+  position: relative;
+  width: auto;
+}
+
+.item img {
+  width: 100%;
+  height: 45vw;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+.list:hover .item:not(:hover) {
+  filter: grayscale(1) blur(4px);
+}
+
+/* Large desktops (1440px and above) */
+@media (min-width: 1440px) {
+  .filter {
+    top: 20vw;
+  }
+}
+@media (max-width: 1439px) and (min-width: 1025px) {
+  .filter {
+    top: 40vw;
+  }
+}
+/* Tablets (768px to 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .filter {
+    top: 50vh;
+  }
+  .item img {
+    height: 70vw;
+  }
+  .banner {
+    min-height: 100vh;
+  }
+  .banner::before {
+    background-size: cover;
+    background-position: top center;
+    height: 100vh;
+  }
+}
+
+/* Mobile devices (up to 767px) */
+@media (max-width: 767px) {
+  .filter {
+    top: 50vh;
+  }
+  .item img {
+    height: 80vw;
+  }
+  .banner::before {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+}

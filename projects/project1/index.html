@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASUS TUF Gaming A15 Showcase</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../../images/p1.png" type="image/png" />
+
+    <style>
+      /* Existing Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Astron", sans-serif;
+      }
+
+      body {
+        background-image: url("images/asusZep.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        font-family: "Astron", sans-serif;
+      }
+
+      /* Header Styling */
+      header {
+        background-color: transparent;
+        backdrop-filter: blur(5px);
+        background-image: linear-gradient(
+          120deg,
+          rgba(13, 96, 141, 0.5),
+          rgba(125, 11, 102, 0.2)
+        );
+        padding: 20px;
+        background-size: 30px, 30px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 6vw;
+        font-family: "Poppins", sans-serif;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        width: 100%;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #5c0805);
+        line-height: 0.4em;
+        outline: none;
+        animation: animate 6s linear infinite;
+        color: rgb(28, 25, 25);
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 5vw;
+        }
+      }
+      /* Desktop (large screens) */
+      @media (min-width: 993px) {
+        header h1 {
+          font-size: 4vw;
+        }
+      }
+      @keyframes animate {
+        0%,
+        18%,
+        20%,
+        50.1%,
+        60%,
+        65.1%,
+        80%,
+        90.1%,
+        92% {
+          color: rgb(33, 30, 30);
+          box-shadow: none;
+        }
+        30%,
+        50%,
+        60.1%,
+        65%,
+        80.1%,
+        90%,
+        92.5%,
+        100% {
+          color: #c3bebe;
+          text-shadow: 0 0 10px rgb(62, 13, 13), 0 0 20px rgb(218, 8, 204),
+            0 0 40px rgb(218, 8, 204), 0 0 80px rgb(218, 8, 204),
+            0 0 100px rgb(218, 8, 204);
+        }
+      }
+
+      /* Device Showcase Section */
+      .device-info {
+        position: relative;
+        padding: 20px;
+        background: linear-gradient(0deg, rgb(0, 0, 0), #262626);
+        box-shadow: 0 0 15px rgb(2, 24, 33);
+        z-index: 1;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .device-info:before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: calc(100% + 10px);
+        height: calc(100% + 10px);
+        background: linear-gradient(45deg, #cc0a03, #ad0667, #9408ba, #8e03bd);
+        background-size: 400%;
+        z-index: -1;
+        animation: animateBg 20s linear infinite;
+        border-radius: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      @keyframes animateBg {
+        0% {
+          background-position: 0% 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+
+      .device-info h2 {
+        font-size: 2rem;
+        color: #141415;
+        text-shadow: 0 0 10px rgb(152, 152, 152);
+        margin-bottom: 20px;
+      }
+
+      .device-info p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .device-info ul {
+        list-style: none;
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .device-info ul li {
+        margin-bottom: 10px;
+      }
+
+      .device-image img {
+        height: auto;
+      }
+
+      .card {
+        padding: 2em;
+        background-color: transparent;
+        backdrop-filter: blur(5px);
+        background-image: linear-gradient(
+          120deg,
+          rgba(13, 96, 141, 0.5),
+          rgba(125, 11, 102, 0.2)
+        );
+        border-radius: 10px;
+        position: relative;
+      }
+
+      /* Footer Styling */
+      footer {
+        background-color: transparent;
+        backdrop-filter: blur(5px);
+        background-image: linear-gradient(
+          120deg,
+          rgba(13, 96, 141, 0.5),
+          rgba(125, 11, 102, 0.2)
+        );
+        padding: 14px;
+        background-size: 20px;
+        text-align: center;
+        border-top: 3px solid #9d087d;
+        border-bottom: 3px solid #9d087d;
+      }
+
+      footer p {
+        color: #b0b0b0;
+        font-size: 0.9rem;
+      }
+    </style>
+
+    <link href="https://fonts.cdnfonts.com/css/astron" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1>ASUS TUF Gaming A15</h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="device-showcase">
+      <div class="container">
+        <div class="row" style="height: 100px"></div>
+        <div class="row align-items-center">
+          <div class="col-12 col-md-12 col-lg-6">
+            <div class="device-info">
+              <h2>Military-Grade Durability. Unstoppable Performance.</h2>
+              <p>
+                Geared for serious gaming and real-world durability, the TUF
+                Gaming A15 is a fully-loaded Windows 11 Home, Pro gaming laptop
+                that can carry you to victory. Powered by the latest AMD Ryzen™
+                CPU and GeForce RTX™ 2050 GPU, action-packed gameplay is fast,
+                fluid, and fully saturates speedy IPS-level displays up to
+                144Hz. Even while boasting a smaller and more portable chassis
+                than its predecessors, this gaming laptop also features a larger
+                battery for superior battery life. Efficient self-cleaning
+                cooling combines with TUF's signature military-grade durability
+                to make this battle-tested road warrior a reliable ally for
+                gamers on the go.
+              </p>
+              <ul>
+                <li><b>Processor:</b> AMD Ryzen™ 5 7535HS</li>
+                <li><b>GPU:</b> NVIDIA® GeForce RTX™ 2050</li>
+                <li><b>RAM:</b> 8GB DDR5</li>
+                <li><b>Storage:</b> 1TB NVMe SSD</li>
+                <li><b>Display:</b> 15.6" Full HD, 144Hz</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-lg-6 pt-5">
+            <div class="card">
+              <img src="images/asus.png" alt="ASUS TUF Gaming A15" />
+            </div>
+          </div>
+        </div>
+        <div class="row" style="height: 100px"></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>
+          <a
+            href="https://www.asus.com/TUF-Gaming/"
+            style="color: inherit; text-decoration: none"
+            >ASUS TUF Gaming © 2024 - Built for the long haul</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
