@@ -8,7 +8,12 @@
 
 body {
   margin: 0;
+  height: 100vh;
   background-color: #000;
+  background-image: url("bgA.png"); /* Update the path to your background image */
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
   color: #fff;
   overflow-x: hidden;
 }
@@ -34,11 +39,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .banner .content .title {
-  position: absolute;
+  position: relative;
+  bottom: 150vh;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -46,7 +52,7 @@ body {
   font-family: "Avengers";
   font-size: 9em;
   text-align: center;
-  z-index: 2;
+  z-index: 1;
 }
 
 .banner::before {
@@ -127,7 +133,7 @@ body {
 /* Mobile devices (up to 767px) */
 @media (max-width: 767px) {
   .filter {
-    top: 50vh;
+    top: 45vh;
   }
   .item img {
     height: 80vw;

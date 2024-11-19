@@ -24,7 +24,14 @@ ul {
   font-weight: bold;
 }
 
-/* Navbar */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
 .navbar {
   position: fixed;
   top: 0;
