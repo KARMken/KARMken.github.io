@@ -10,7 +10,7 @@ body {
   margin: 0;
   height: 100vh;
   background-color: #000;
-  background-image: url("bgA.png"); /* Update the path to your background image */
+  background-image: url("bgA.png");
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
