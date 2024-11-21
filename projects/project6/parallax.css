@@ -120,6 +120,13 @@
   #keyart-8 {
     background-image: url(img/bg8S.svg);
   }
+  #keyart-9 {
+    background-image: url(img/bg9S.svg);
+  }
+
+  #keyart-10 {
+    background-image: url(img/bg10S.svg);
+  }
 
   .title-intro {
     font-size: 6rem;
