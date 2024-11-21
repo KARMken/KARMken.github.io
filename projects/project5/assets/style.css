@@ -101,6 +101,22 @@ body {
   filter: grayscale(1) blur(4px);
 }
 
+.footer-link {
+  color: rgb(210, 210, 210);
+  transition: letter-spacing 0.3s ease;
+  font-family: "Avengers";
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.footer-link:hover {
+  letter-spacing: 5px;
+  color: rgb(210, 210, 210);
+}
+
+h1 {
+  font-family: "Russo";
+}
 /* Large desktops (1440px and above) */
 @media (min-width: 1440px) {
   .filter {
@@ -132,6 +148,11 @@ body {
 
 /* Mobile devices (up to 767px) */
 @media (max-width: 767px) {
+  body {
+    background-image: url("bgA2.png");
+    background-size: cover;
+    background-position: top center;
+  }
   .filter {
     top: 45vh;
   }
