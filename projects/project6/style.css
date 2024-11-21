@@ -1,0 +1,122 @@
+/*PUT YOUR CUSTOM STYLE HERE*/
+
+/*!This style is important, do not override!*/
+@font-face {
+  font-family: "Squad";
+  src: url("./assets/fonts/supercell-magic-webfont.woff") format("woff"),
+    url("./assets/fonts/supercell-magic-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  background-color: #000000;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e60af1;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #900797;
+}
+
+.title-intro {
+  font-family: "Bangers", system-ui;
+  color: aliceblue;
+  font-size: 10rem;
+  text-align: center;
+  -webkit-text-stroke: 0.2rem rgb(0, 0, 0);
+  pointer-events: none;
+}
+
+.text-p {
+  cursor: default;
+  transition: letter-spacing 0.5s ease;
+  font-family: "Squad";
+  color: aliceblue;
+  font-size: 0.8rem;
+  max-width: 800px;
+  text-align: justify;
+}
+
+.text-p:hover {
+  letter-spacing: 2px;
+}
+
+.text-low {
+  font-size: 3rem;
+  letter-spacing: -7px;
+}
+
+.social-t {
+  pointer-events: none;
+  font-family: "Squad";
+  color: aliceblue;
+  font-size: 3rem;
+  text-align: center;
+  -webkit-text-stroke: 0.2rem rgb(0, 0, 0);
+  letter-spacing: -2px;
+}
+footer {
+  font-family: "Squad";
+  background-color: #000000;
+}
+/* Footer Links */
+.footer-icon-link,
+.footer-link {
+  color: #b017a4; /* Default Supercell color */
+  font-size: 1rem;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-icon-link:hover {
+  color: #00ff95; /* Bright hover effect */
+}
+
+.credits {
+  cursor: pointer;
+  font-family: "Bangers", sans-serif;
+  text-align: center;
+  color: #b017a4;
+  font-size: 1rem;
+  letter-spacing: 0.3rem;
+}
+.credits:hover {
+  color: #e60af1;
+}
+/* Footer List Styling */
+.footer-list {
+  padding-left: 0;
+}
+
+.footer-list li {
+  list-style: none;
+}
+
+.footer-icon-link:hover {
+  color: #00ff95;
+}
+
+@media (max-width: 767px) {
+  .footer-heading {
+    text-align: center;
+  }
+
+  .footer-link {
+    text-align: center;
+  }
+}

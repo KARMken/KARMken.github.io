@@ -1,0 +1,127 @@
+/* PARALLAX.CSS */
+/*CSS created by Christopher Jay De Claro*/
+/*github.com/cjdeclaro*/
+
+/*Key Art default settings*/
+
+.keyart,
+.keyart_layer {
+  height: 1000px;
+}
+
+.keyart {
+  position: relative;
+  z-index: 10;
+}
+
+.keyart_layer {
+  background-position: bottom center;
+  background-size: auto 1038px;
+  background-repeat: repeat-x;
+  width: 100%;
+  position: absolute;
+}
+
+.keyart_layer.parallax {
+  position: fixed;
+}
+
+.main-content {
+  width: 100%;
+  position: absolute;
+  z-index: 200;
+  padding: 0;
+  margin: 0;
+}
+
+.second-content {
+  width: 100%;
+  position: absolute;
+  z-index: 200;
+}
+
+/*ADD OR REMOVE LAYERS AS NEEDED*/
+
+#keyart-0 {
+  background-image: url(img/bg0.png);
+}
+
+#keyart-1 {
+  background-image: url(img/bg1.svg);
+}
+
+#keyart-2 {
+  background-image: url(img/bg2.png);
+}
+
+#keyart-3 {
+  background-image: url(img/bg8.png);
+}
+
+#keyart-4 {
+  background-image: url(img/bg4.png);
+}
+
+#keyart-5 {
+  background-image: url(img/bg5.png);
+}
+
+#keyart-6 {
+  background-image: url(img/bg6.png);
+}
+
+#keyart-7 {
+  background-image: url(img/bg7.png);
+}
+
+#keyart-8 {
+  background-image: url(img/bg8.png);
+}
+#keyart-9 {
+  background-image: url(img/bg9.svg);
+}
+#keyart-10 {
+  background-image: url(img/bg10.svg);
+}
+
+#keyart-scrim {
+  opacity: 0;
+}
+
+@media (max-width: 767px) {
+  #keyart-1 {
+    background-image: url(img/bg1S.svg);
+  }
+
+  #keyart-2 {
+    background-image: url(img/bg2S.svg);
+  }
+
+  #keyart-3 {
+    background-image: url(img/bg3S.svg);
+  }
+
+  #keyart-4 {
+    background-image: url(img/bg4S.svg);
+  }
+
+  #keyart-5 {
+    background-image: url(img/bg5S.svg);
+  }
+
+  #keyart-6 {
+    background-image: url(img/bg6S.svg);
+  }
+
+  #keyart-7 {
+    background-image: url(img/bg7S.svg);
+  }
+
+  #keyart-8 {
+    background-image: url(img/bg8S.svg);
+  }
+
+  .title-intro {
+    font-size: 6rem;
+  }
+}
