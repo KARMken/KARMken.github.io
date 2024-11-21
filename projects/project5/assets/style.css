@@ -5,7 +5,21 @@
   font-weight: normal;
   font-style: normal;
 }
+::-webkit-scrollbar {
+  width: 12px;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #8b9497;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(221, 222, 224);
+}
 body {
   margin: 0;
   height: 100vh;
