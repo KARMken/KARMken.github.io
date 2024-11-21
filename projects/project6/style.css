@@ -77,14 +77,11 @@ footer {
 /* Footer Links */
 .footer-icon-link,
 .footer-link {
-  color: #b017a4; /* Default Supercell color */
+  color: #d6d6d6;
+  transition: color 0.7s ease;
   font-size: 1rem;
   margin: 0 15px;
   transition: color 0.3s ease;
-}
-
-.footer-icon-link:hover {
-  color: #00ff95; /* Bright hover effect */
 }
 
 .credits {
@@ -93,7 +90,7 @@ footer {
   text-align: center;
   color: #b017a4;
   font-size: 1rem;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.2rem;
 }
 .credits:hover {
   color: #e60af1;
@@ -108,7 +105,8 @@ footer {
 }
 
 .footer-icon-link:hover {
-  color: #00ff95;
+  color: #e60af1;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 767px) {
