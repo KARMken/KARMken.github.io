@@ -202,11 +202,29 @@
         }
       </script>
       <div class="container-fluid">
+        <div class="row" style="height: 100px"></div>
+        <div class="row">
+          <div class="col-12">
+            <h1 class="text-center">Projects</h1>
+        <div class="row" style="height: 20px"></div>
+
+            <!-- Add a toggle button group -->
+            <div class="text-center my-4">
+              <div class="btn-group" role="group" aria-label="Project Type Toggle">
+                </a><button type="button" class="btn btn-primary active" id="web-dev-btn"><a href="#web">Web Dev</a></button>
+                <button type="button" class="btn btn-secondary" id="app-dev-btn"><a href="#app">App Dev</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="container-fluid">
         <div class="row" style="height: 50px"></div>
         <div class="row">
           <div class="col-12">
-            <h1 class="text-center">My Projects</h1>
+            <h1 class="text-center" id="web">Web Dev Projects</h1>
           </div>
+        <div class="row" style="height: 50px"></div>
+
           <div class="row">
             <div class="col-12 px-5">
               <div class="home-content">
@@ -421,6 +439,14 @@
           </div>
         </div>
       </div>
+      <div class="container-fluid">
+        <div class="row" style="height: 50px"></div>
+        <div class="row">
+          <div class="col-12">
+            <h1 class="text-center" id="app">App Dev Projects</h1>
+          </div>
+        <div class="row" style="height: 1000px"></div>
+      </div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -431,6 +457,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
       new WOW().init(); // Initialize WOW.js
+
+      document.getElementById('web-dev-btn').addEventListener('click', function() {
+          this.classList.add('active');
+          document.getElementById('app-dev-btn').classList.remove('active');
+        });
+
+        document.getElementById('app-dev-btn').addEventListener('click', function() {
+          this.classList.add('active'); 
+          document.getElementById('web-dev-btn').classList.remove('active'); 
+        });
     </script>
   </body>
 </html>
