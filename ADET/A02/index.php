@@ -85,9 +85,7 @@ if (isset($_GET['page'])) {
             </div>
             <div class="col-12 col-sm-12 col-md-9 col-lg-9">
                 <div class="card glass parent-content shadow p-4" style="height: 85vh; max-height: 85vh; overflow-y: scroll">
-
                     <?php include("shared/" . $page . ".php"); ?>
-
                 </div>
             </div>
         </div>
