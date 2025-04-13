@@ -1,0 +1,184 @@
+@font-face {
+  font-family: "jp";
+  src: url("assets/fonts/jp.woff2") format("woff2");
+}
+
+body {
+  font-family: "jp";
+  background-color: rgb(0, 0, 0);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(63, 119, 148, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  height: 70px;
+  z-index: 10;
+}
+
+.glass {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  background: rgba(21, 58, 77, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.menu {
+  backdrop-filter: blur(10px);
+  background: rgba(63, 119, 148, 0.3);
+}
+.container-fluid {
+  transition: opacity 0.3s ease;
+}
+
+.navbar-text {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.play-video {
+  background-color: transparent;
+  opacity: 1;
+  z-index: 11;
+}
+
+.game-button {
+  font-family: "jp";
+  display: block;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 115, 232, 0.4),
+    rgba(63, 119, 148, 0.4)
+  );
+  color: #fff;
+  padding: 15px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.game-button:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(63, 119, 148, 0.5),
+    rgba(11, 61, 145, 0.5)
+  );
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+  font-size: 50px;
+}
+
+.info-card {
+  transition: background-color 0.3s ease;
+}
+
+.info-text {
+  background-color: rgba(13, 41, 60, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.info-card:hover .info-text {
+  background-color: rgba(13, 41, 60, 1);
+}
+
+.dino-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+  transform: scale(0.9);
+}
+
+.dino-header {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  background-color: rgba(63, 119, 148, 0.8);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.dino-type {
+  display: flex;
+  align-items: center;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.dino-icon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.dino-label {
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.dino-image {
+  position: relative;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.dino-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(22, 49, 62, 0.5);
+  color: white;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.dino-card:hover .dino-text {
+  transform: translateY(0);
+}
+
+.dino-card:hover .dino-image {
+  opacity: 0.7;
+}
+
+.dino-card:hover {
+  transform: scale(1);
+}
+
+@media (max-width: 760px) {
+  .menu {
+    margin-bottom: 20px;
+  }
+
+  .dino-text h2,
+  h5 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1245px) and (min-width: 761px) {
+  .dino-card:hover .dino-label,
+  .dino-card:hover .dino-icon {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}

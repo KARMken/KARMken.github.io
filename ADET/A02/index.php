@@ -1,142 +1,177 @@
 <?php
-$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+
+$page = "overview";
+
+if (isset($_GET['page'])) {
+    $page = strtolower($_GET['page']);
+    switch ($page) {
+        case "overview":
+            $page = "overview";
+            break;
+        case "gamemode":
+            $page = "gameModes";
+            break;
+        case "dinosaurs":
+            $page = "dinosaurs";
+            break;
+        case "gameplay":
+            $page = "gameplay";
+            break;
+        case "news":
+            $page = "news";
+            break;
+        default:
+            header("Location: ?page=overview");
+            break;
+    }
+} else {
+    header("Location: ?page=overview");
+}
+
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Philippine Mythical Creatures Wiki</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jurassic World Evolution 2</title>
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Optional spooky theme CSS -->
-    <style>
-        body {
-            background-color: #0c0c0c;
-            color: #e0dede;
-            font-family: 'Cinzel', serif;
-            /* spooky elegant font */
-        }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 
-        .navbar {
-            background-color: #1a1a1a;
-        }
-
-        .navbar-brand,
-        .nav-link {
-            color: #e0dede !important;
-        }
-
-        .nav-link:hover {
-            color: #9e7bff !important;
-            /* spooky purple hover */
-        }
-
-        .card {
-            background-color: #1f1f1f;
-            border: none;
-            box-shadow: 0 0 15px rgba(158, 123, 255, 0.3);
-        }
-
-        .footer {
-            background-color: #1a1a1a;
-            color: #aaa;
-            padding: 20px 0;
-            text-align: center;
-            margin-top: 40px;
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="index.php">Mythical Wiki</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon" style="color: white;"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=aswang">Aswang</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=kapre">Kapre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=tikbalang">Tikbalang</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=manananggal">Manananggal</a>
-                    </li>
-                </ul>
-            </div>
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1; pointer-events:none;">
+        <div id="player"></div>
+    </div>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand"><img src="assets/images/logo.png" style="height: 40px;" alt=""></a>
+            <div class="navbar-text"><img src="assets/images/logoText.png" style="height: 40px;" alt=""></div>
+            <div class="play-video"><img src="assets/images/play-button.png" style="height: 40px; opacity: 1;" alt=""></div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container mt-5">
-        <?php
-        switch ($page) {
-            case 'aswang':
-                echo "<h1>Aswang</h1><p>The Aswang is a shapeshifting monster...</p>";
-                break;
-            case 'kapre':
-                echo "<h1>Kapre</h1><p>The Kapre is a giant who dwells in trees...</p>";
-                break;
-            case 'tikbalang':
-                echo "<h1>Tikbalang</h1><p>Tikbalang has the head of a horse and the body of a man...</p>";
-                break;
-            case 'manananggal':
-                echo "<h1>Manananggal</h1><p>The Manananggal can detach its torso and fly at night...</p>";
-                break;
-            default:
-                echo '
-            <div class="text-center">
-                <h1>Welcome to Philippine Mythical Creatures Wiki</h1>
-                <p class="lead">Discover the eerie beings of Philippine folklore.</p>
-                <div class="row mt-5">
-                    <div class="col-md-4">
-                        <div class="card p-3">
-                            <h5>Aswang</h5>
-                            <p>Shapeshifter and blood-sucker of the night.</p>
-                            <a href="index.php?page=aswang" class="btn btn-outline-light">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card p-3">
-                            <h5>Kapre</h5>
-                            <p>Giant tree spirit smoking his cigar.</p>
-                            <a href="index.php?page=kapre" class="btn btn-outline-light">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card p-3">
-                            <h5>Tikbalang</h5>
-                            <p>Half-man, half-horse trickster.</p>
-                            <a href="index.php?page=tikbalang" class="btn btn-outline-light">Learn More</a>
-                        </div>
-                    </div>
+    <div class="container-fluid mt-5 pt-5">
+        <div class="row">
+
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+                <div class="card menu glass shadow p-3" style="height: 85vh">
+                    <a href="?page=overview" class="game-button my-3">
+                        Overview
+                    </a>
+                    <a href="?page=gameMode" class="game-button my-3">
+                        Game Modes
+                    </a>
+                    <a href="?page=dinosaurs" class="game-button my-3">
+                        Dinosaurs
+                    </a>
+                    <a href="?page=gameplay" class="game-button my-3">
+                        Gameplay
+                    </a>
+                    <a href="?page=news" class="game-button my-3">
+                        News
+                    </a>
+                    <a href="../../" class="game-button my-3">
+                        Creator
+                    </a>
                 </div>
-            </div>';
-                break;
+            </div>
+            <div class="col-12 col-sm-12 col-md-9 col-lg-9">
+                <div class="card glass parent-content shadow p-4" style="height: 85vh; max-height: 85vh; overflow-y: scroll">
+
+                    <?php include("shared/" . $page . ".php"); ?>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <!-- Youtube Iframe API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script>
+        let player;
+        var cards = document.querySelectorAll('.glass');
+        let isPaused = false;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '100%',
+                width: '100%',
+                videoId: 'g76Zx7zydXQ',
+                playerVars: {
+                    autoplay: 1,
+                    mute: 1,
+                    controls: 0,
+                    showinfo: 0,
+                    autohide: 1,
+                    loop: 1,
+                    playlist: 'g76Zx7zydXQ'
+                },
+                events: {
+                    'onStateChange': onPlayerStateChange,
+                }
+            });
         }
-        ?>
-    </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2025 Mythical Creatures Wiki. Beware the Aswang tonight.</p>
-    </div>
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING) {
+                for (var i = 0; i < cards.length; i++) {
+                    cards[i].style.opacity = '0';
+                    cards[i].style.pointerEvents = 'none';
+                }
+                player.unMute();
+                player.setVolume(20);
+            }
+        }
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        // Video Toggling (Handle play/pause)
+        document.querySelector('.play-video').addEventListener('click', function() {
+            if (player) {
+                const playerState = player.getPlayerState();
+
+                if (playerState === YT.PlayerState.PLAYING) {
+
+                    player.pauseVideo();
+                    isPaused = true;
+                } else {
+                    player.playVideo();
+                    isPaused = false;
+                }
+            }
+        });
+
+        // Video hover effect to control visibility
+        document.querySelector('.play-video').addEventListener('mouseenter', function() {
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].style.opacity = '0';
+            }
+            if (isPaused) {
+                document.getElementById('player').style.display = 'block';
+            }
+        });
+
+        document.querySelector('.play-video').addEventListener('mouseleave', function() {
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].style.opacity = '1';
+                cards[i].style.pointerEvents = 'auto';
+            }
+            if (isPaused) {
+                document.getElementById('player').style.display = 'none';
+            }
+        });
+    </script>
 </body>
 
 </html>
