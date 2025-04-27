@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anime Index</title>
+    <link rel="Icon" type="image/png" href="assets/images/anime.png" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -125,15 +126,30 @@
   </head>
   <body>
     <div class="anime-container">
-      <a href="jujutsukaisen.html" class="anime-box jujutsu">
+      <a
+        href="jujutsukaisen.html"
+        class="anime-box jujutsu wow animate__animated animate__fadeInBottomRight"
+      >
         <div class="overlay">Jujutsu Kaisen</div>
       </a>
-      <a href="aot.html" class="anime-box aot">
+      <a
+        href="aot.html"
+        class="anime-box aot wow animate__animated animate__fadeInUp"
+      >
         <div class="overlay">Attack on Titan</div>
       </a>
-      <a href="opm.html" class="anime-box opm">
+      <a
+        href="opm.html"
+        class="anime-box opm wow animate__animated animate__fadeInBottomLeft"
+      >
         <div class="overlay">One Punch Man</div>
       </a>
     </div>
+
+    <!-- Wow Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init(); // Initialize WOW.js
+    </script>
   </body>
 </html>

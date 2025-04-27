@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found</title>
+    <link rel="icon" href="../../images/error.png" type="image/png" />
+
+    <style>
+      body {
+        font-family: "Poppins", "Arial", sans-serif;
+        background-color: #000000;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+        flex-direction: column;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      @keyframes fadeSlideUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .zoro-img {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        margin-bottom: 20px;
+        animation: fadeIn 8s ease forwards, float 3s ease-in-out infinite;
+        opacity: 0;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      h1 {
+        font-size: 6rem;
+        margin: 0;
+        text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.7);
+        animation: fadeSlideUp 1s ease forwards;
+      }
+
+      p {
+        font-size: 1.8rem;
+        margin-top: 15px;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+        max-width: 600px;
+        opacity: 0;
+        animation: fadeSlideUp 1s ease forwards;
+        animation-delay: 0.5s;
+      }
+
+      .btn-back {
+        margin-top: 30px;
+        padding: 15px 40px;
+        background-color: #1c8e88;
+        color: white;
+        font-size: 1.4rem;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: 0.4s;
+        box-shadow: 0 0 15px rgba(7, 139, 95, 0.5);
+        opacity: 0;
+        animation: fadeSlideUp 1s ease forwards;
+        animation-delay: 1s;
+      }
+
+      .btn-back:hover {
+        background-color: #0e6156;
+        transform: scale(1.1);
+        box-shadow: 0 0 25px rgba(71, 255, 191, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="assets/images/zoro.png" alt="Zoro" class="zoro-img" />
+
+    <h1>404</h1>
+    <p>Oops! You wandered off like Zoro. Let's get you back on track!</p>
+    <button class="btn-back" onclick="window.history.back()">Go Back</button>
+  </body>
+</html>
