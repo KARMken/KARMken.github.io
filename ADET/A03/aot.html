@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Index | Attack On Titan</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Animate css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&family=Cinzel:wght@700&family=Orbitron:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      background-color: #beb6b6;
+      color: #242323;
+      font-family: "Cinzel", serif;
+      overflow-x: hidden;
+    }
+
+    .video-container {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #bg-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .intro-section {
+      background-color: #beb6b6;
+      color: #242323;
+      letter-spacing: 1px;
+      padding: 40px 15px;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .manga-header {
+      font-family: "Georgia", serif;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 30px 0;
+      border: 3px solid transparent;
+      border-top-color: #2e2b2b;
+      border-bottom-color: #2e2b2b;
+      margin-bottom: 3rem;
+    }
+
+    .mute-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .mute-btn:focus {
+      outline: none;
+    }
+
+    .home-btn {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: transparent;
+      border: 5px solid #c6c2c2;
+      background-image: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0) 20%,
+        #595959 50%,
+        #333333 100%
+      );
+      position: relative;
+      font-size: 36px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .home-btn:hover {
+      transform: scale(1.1) rotate(10deg);
+    }
+
+    .bento-box {
+      border: #000 3px solid;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .bento-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .bento-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease, filter 0.5s ease;
+    }
+
+    .bento-box:hover img {
+      transform: scale(1.1) rotate(5deg);
+      filter: brightness(0.8);
+    }
+
+    .bento-box .overlay {
+      position: absolute;
+      bottom: 0;
+      background: linear-gradient(
+        0deg,
+        rgba(10, 10, 10, 0.9) 0%,
+        rgba(30, 30, 30, 0.6) 50%,
+        rgba(60, 60, 60, 0.3) 100%
+      );
+      color: #f5f3f0;
+      width: 100%;
+      padding: 20px;
+      letter-spacing: 1px;
+      font-size: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    .bento-box:hover .overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+
+  <body>
+    <div class="video-container">
+      <video id="bg-video" autoplay loop muted>
+        <source src="assets/videos/aotbg.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- Mute/Unmute Button -->
+    <button class="mute-btn" id="muteButton">🔇</button>
+
+    <!-- Intro Section -->
+    <div class="intro-section">
+      <h1
+        class="wow animate__animated animate__fadeInUp"
+        style="margin-bottom: 40px"
+      >
+        Attack On Titan
+      </h1>
+      <p
+        class="wow animate__animated animate__fadeInUp"
+        style="text-align: justify; margin: 0 auto; width: 80%"
+      >
+        Attack on Titan follows Eren Yeager, a young boy who vows to eliminate
+        the Titans after they destroy his hometown and kill his mother. Joining
+        the Scout Regiment alongside his friends Mikasa Ackerman and Armin
+        Arlert, Eren discovers shocking truths about the Titans, the history of
+        humanity, and the world beyond the walls. As alliances shift and battles
+        grow more brutal, Eren's quest for freedom leads him down a dark and
+        devastating path that will determine the fate of humanity.
+      </p>
+    </div>
+    <div class="container-fluid">
+      <div class="manga-header wow animate__animated animate__fadeInUp">
+        Character Spotlight
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-sm-12">
+          <div class="row py-2">
+            <div class="col-lg-5 col-md-6 col-sm-12">
+              <div class="bento-box-wrapper">
+                <div
+                  class="bento-box wow animate__animated animate__fadeInRight"
+                  style="height: 40vh"
+                >
+                  <img
+                    src="assets/images/aot1.jpg"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                    alt="Eren Yeager"
+                  />
+                  <div class="overlay">
+                    <h5>Eren Yeager</h5>
+                    <p>The boy who sought freedom — at any cost.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7 col-md-6 col-sm-12">
+              <div
+                class="bento-box wow animate__animated animate__fadeInLeft"
+                style="height: 40vh"
+              >
+                <img
+                  src="assets/images/aot2.webp"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                  alt="Mikasa Ackerman"
+                />
+                <div class="overlay">
+                  <h5>Mikasa Ackerman</h5>
+                  <p>A fierce protector driven by love and duty.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div
+                class="bento-box wow animate__animated animate__fadeInRight"
+                style="height: 50vh"
+              >
+                <img
+                  src="assets/images/aot5.jpg"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                  alt="Armin Arlert"
+                />
+                <div class="overlay">
+                  <h5>Armin Arlert</h5>
+                  <p>
+                    The mind that turned tides of war with hope and strategy.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div
+                class="bento-box wow animate__animated animate__fadeInLeft"
+                style="height: 50vh"
+              >
+                <img
+                  src="assets/images/aot3.jpg"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                  alt="Levi Ackerman"
+                />
+                <div class="overlay">
+                  <h5>Levi Ackerman</h5>
+                  <p>
+                    Humanity’s strongest soldier, feared by Titans and men
+                    alike.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-12 py-2">
+          <div
+            class="bento-box wow animate__animated animate__fadeInRight"
+            style="height: 96%"
+          >
+            <img
+              src="assets/images/aot4.jpg"
+              style="width: 100%; height: 100%; object-fit: cover"
+              alt="Survey Corps"
+            />
+            <div class="overlay">
+              <h5>Survey Corps</h5>
+              <p>
+                The brave souls who ventured beyond the walls, chasing freedom.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-5">
+        <div class="manga-header wow animate__animated animate__fadeInUp">
+          Titans
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-sm-12">
+          <div class="row">
+            <div class="col-lg-6 col-sm-12">
+              <div
+                class="bento-box wow animate__animated animate__fadeInRight"
+                style="height: 50vh"
+              >
+                <img
+                  src="assets/images/titan6.webp"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                  alt="Beast Titan"
+                />
+                <div class="overlay">
+                  <h5>Beast Titan</h5>
+                  <p>
+                    The mind that turned tides of war with hope and strategy.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-12">
+              <!-- Jaw Titan-->
+              <div
+                class="bento-box wow animate__animated animate__fadeInUp"
+                style="height: 50vh; margin-bottom: 10px"
+              >
+                <img
+                  src="assets/images/titan7.webp"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                  alt="Jaw Titan"
+                />
+                <div class="overlay">
+                  <h5>Jaw Titan</h5>
+                  <p>
+                    Unmatched speed and jaws that crush anything in their path.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-12">
+              <!-- Cart Titan -->
+              <div
+                class="bento-box wow animate__animated animate__fadeInUp"
+                style="height: 50vh; margin-bottom: 10px"
+              >
+                <img
+                  src="assets/images/titan8.webp"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                  alt="Cart Titan"
+                />
+                <div class="overlay">
+                  <h5>Cart Titan</h5>
+                  <p>
+                    The endurance titan, swift and strategic on the battlefield.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <!-- War Hammer Titan -->
+              <div
+                class="bento-box wow animate__animated animate__fadeInLeft"
+                style="height: 40vh; margin-bottom: 10px"
+              >
+                <img
+                  src="assets/images/titan9.webp"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                  alt="War Hammer Titan"
+                />
+                <div class="overlay">
+                  <h5>War Hammer Titan</h5>
+                  <p>
+                    Forged weapons of hardening, built for any battle situation.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-8 col-md-6 col-sm-12">
+              <!-- Founding Titan -->
+              <div
+                class="bento-box wow animate__animated animate__fadeInRight"
+                style="height: 40vh; margin-bottom: 10px"
+              >
+                <img
+                  src="assets/images/titan1.jpg"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                  alt="Founding Titan"
+                />
+                <div class="overlay">
+                  <h5>Founding Titan</h5>
+                  <p>The power to reshape the world and command all Titans.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-sm-12">
+              <!-- Armored Titan -->
+              <div
+                class="bento-box wow animate__animated animate__fadeInUp"
+                style="height: 50vh; margin-bottom: 10px"
+              >
+                <img
+                  src="assets/images/titan4.webp"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                  alt="Armored Titan"
+                />
+                <div class="overlay">
+                  <h5>Armored Titan</h5>
+                  <p>
+                    The shield of Marley, its armor repels almost any attack.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-12">
+              <!-- Female Titan -->
+              <div
+                class="bento-box wow animate__animated animate__fadeInUp"
+                style="height: 50vh; margin-bottom: 10px"
+              >
+                <img
+                  src="assets/images/titan5.webp"
+                  style="object-fit: cover; width: 100%; height: auto"
+                  alt="Female Titan"
+                />
+                <div class="overlay">
+                  <h5>Female Titan</h5>
+                  <p>Agile, durable, and deadly — built for ultimate combat.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-12">
+          <div class="row">
+            <div class="col-lg-12 col-sm-12">
+              <!-- Attack Titan -->
+              <div
+                class="bento-box wow animate__animated animate__fadeInRight"
+                style="height: 60vh; margin-bottom: 10px"
+              >
+                <img
+                  src="assets/images/titan2.jpg"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                  alt="Attack Titan"
+                />
+                <div class="overlay">
+                  <h5>Attack Titan</h5>
+                  <p>
+                    The spirit of freedom, pushing forward against all odds.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-sm-12">
+              <!-- Colossal Titan -->
+              <div
+                class="bento-box wow animate__animated animate__fadeInRight"
+                style="height: 82vh"
+              >
+                <img
+                  src="assets/images/titan3.jpg"
+                  style="object-fit: cover; width: 100%; height: auto"
+                  alt="Colossal Titan"
+                />
+                <div class="overlay">
+                  <h5>Colossal Titan</h5>
+                  <p>
+                    A towering force of destruction, vaporizing all in its path.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center my-4">
+        <a href="../A03/index.html"
+          ><button
+            class="home-btn p-3 wow animate__animated animate__pulse animate__infinite"
+          ></button
+        ></a>
+      </div>
+    </div>
+
+    <!-- Wow Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init(); // Initialize WOW.js
+    </script>
+
+    <!-- Load YouTube Iframe API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script>
+      const video = document.getElementById("bg-video");
+      const muteButton = document.getElementById("muteButton");
+
+      video.muted = true;
+      video.autoplay = true;
+      video.loop = true;
+
+      video.oncanplaythrough = function () {
+        video.volume = 0.2;
+        video.play();
+      };
+
+      muteButton.addEventListener("click", () => {
+        if (video.muted) {
+          video.muted = false;
+          video.volume = 0.2;
+          muteButton.textContent = "🔊"; // Unmute button
+        } else {
+          video.muted = true;
+          video.volume = 0.2;
+          muteButton.textContent = "🔇"; // Mute button
+        }
+      });
+    </script>
+  </body>
+</html>

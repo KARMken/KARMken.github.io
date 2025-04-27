@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Index | One Punch Man</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Animate css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&family=Orbitron:wght@600&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      background-color: #1c1c1c;
+      color: #fff;
+      font-family: "Orbitron", sans-serif;
+      overflow-x: hidden;
+    }
+
+    .video-container {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #bg-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .intro-section {
+      background-color: #1c1c1c;
+      color: #f8f8f8;
+      letter-spacing: 1px;
+      padding: 40px 15px;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .manga-header {
+      font-family: "Press Start 2P", cursive;
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 30px 0;
+      border: 3px solid transparent;
+      border-top-color: #f4c542;
+      border-bottom-color: #f4c542;
+      margin-bottom: 3rem;
+      color: #f4c542;
+    }
+
+    .mute-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .mute-btn:focus {
+      outline: none;
+    }
+
+    .home-btn {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: transparent;
+      border: 5px solid #f4c542;
+      background-image: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0) 20%,
+        #902d2d 50%,
+        #c52f2f 100%
+      );
+      position: relative;
+      font-size: 36px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .home-btn:hover {
+      transform: scale(1.1) rotate(10deg);
+    }
+
+    .fight-video {
+      margin-bottom: 30px;
+    }
+
+    .fight-title {
+      font-family: "Press Start 2P", cursive;
+      font-size: 2rem;
+      color: #fc2a36;
+      text-align: center;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #383837;
+      padding-bottom: 10px;
+    }
+
+    .fight-info {
+      background-color: #333333;
+      color: #f5f5f5;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .fight-info-title {
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.8rem;
+      color: #f4c542;
+      margin-bottom: 15px;
+    }
+
+    .fight-info p {
+      font-family: "Staatliches", cursive;
+      letter-spacing: 2px;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #9f9c9c;
+      text-align: justify;
+    }
+
+    @media (max-width: 768px) {
+      .fight-video iframe {
+        width: 100%;
+        height: 200px;
+      }
+
+      .fight-info {
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .fight-video iframe {
+        width: 100%;
+        height: 180px;
+      }
+
+      .fight-info {
+        padding: 15px;
+      }
+
+      .fight-title {
+        font-size: 1.6rem;
+      }
+
+      .fight-info-title {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+
+  <body>
+    <div class="video-container">
+      <video id="bg-video" autoplay loop muted>
+        <source src="assets/videos/opmbg.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- Mute/Unmute Button -->
+    <button class="mute-btn" id="muteButton">🔇</button>
+
+    <!-- Intro Section -->
+    <div class="intro-section">
+      <h1
+        class="wow animate__animated animate__fadeInUp"
+        style="margin-bottom: 40px; color: #fc2a36"
+      >
+        One Punch Man
+      </h1>
+      <p
+        class="wow animate__animated animate__fadeInUp"
+        style="text-align: justify; margin: 0 auto; width: 80%"
+      >
+        One Punch Man follows the story of Saitama, a hero who can defeat any
+        opponent with a single punch. Despite his overwhelming power, he
+        struggles with boredom and a lack of worthy adversaries. He seeks
+        recognition and a challenge, joining the Hero Association in hopes of
+        finding a worthy opponent. Alongside his disciples and friends, Saitama
+        faces an array of powerful villains, yet his true struggle is often
+        against the mundanity of his existence, as he searches for excitement in
+        a world that he has already conquered with ease.
+      </p>
+    </div>
+    <div class="container-fluid">
+      <div class="manga-header wow animate__animated animate__fadeInUp">
+        Top Fights
+      </div>
+      <div class="row">
+        <div
+          class="col-lg-8 col-md-12 wow animate__animated animate__fadeInLeft"
+        >
+          <div class="fight-video">
+            <h2 class="fight-title">Vaccine Man</h2>
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/oI0yFBY-rVs"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media;
+                gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <div
+          class="col-lg-4 col-md-12 wow animate__animated animate__fadeInRight"
+        >
+          <div class="fight-info" style="height: 95%">
+            <h3 class="fight-info-title">Saitama vs. Vaccine Man</h3>
+            <p>
+              In the first major fight of the series, Saitama faces Vaccine Man,
+              a villain who seeks to take over the world by causing disease and
+              chaos. Saitama, with his overwhelming strength, defeats Vaccine
+              Man with a single punch, showcasing his incredible power from the
+              very start of the series.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="col-lg-4 col-md-6 wow animate__animated animate__fadeInLeft"
+        >
+          <div class="fight-info" style="height: 95%">
+            <h3 class="fight-info-title">Saitama vs. Crablante</h3>
+            <p>
+              Crablante is the first villain that Saitama defeats in the series.
+              He is a mutated creature with a crab-like body, wreaking havoc in
+              the city. Despite his monstrous appearance, Saitama easily defeats
+              Crablante with a single punch, proving that he is already beyond
+              most opponents.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="col-lg-8 col-md-6 wow animate__animated animate__fadeInRight"
+        >
+          <div class="fight-video">
+            <h2 class="fight-title">Crablante</h2>
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/A8LM9sYn-Sg"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media;
+                gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <div
+          class="col-lg-8 col-md-12 wow animate__animated animate__fadeInLeft"
+        >
+          <div class="fight-video">
+            <h2 class="fight-title">Boros</h2>
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/kptzzq0Ho0o"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media;
+                gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <div
+          class="col-lg-4 col-md-12 wow animate__animated animate__fadeInRight"
+        >
+          <div class="fight-info" style="height: 95%">
+            <h3 class="fight-info-title">Saitama vs. Boros</h3>
+            <p>
+              One of Saitama’s most intense fights, Boros is the leader of the
+              Dark Matter Thieves, an extraterrestrial race. With his
+              regenerative powers and massive strength, Boros presents a serious
+              challenge to Saitama. However, Saitama ultimately defeats Boros
+              with his Serious Punch, breaking the villain’s regenerative
+              abilities and ending the fight in a spectacular fashion.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center my-4">
+        <a href="../A03/index.html"
+          ><button
+            class="home-btn p-3 wow animate__animated animate__pulse animate__infinite"
+          ></button
+        ></a>
+      </div>
+    </div>
+
+    <!-- Wow Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init(); // Initialize WOW.js
+    </script>
+
+    <!-- Load YouTube Iframe API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script>
+      const video = document.getElementById("bg-video");
+      const muteButton = document.getElementById("muteButton");
+
+      video.muted = true;
+      video.autoplay = true;
+      video.loop = true;
+
+      video.oncanplaythrough = function () {
+        video.volume = 0.2;
+        video.play();
+      };
+
+      muteButton.addEventListener("click", () => {
+        if (video.muted) {
+          video.muted = false;
+          video.volume = 0.2;
+          muteButton.textContent = "🔊";
+        } else {
+          video.muted = true;
+          video.volume = 0.2;
+          muteButton.textContent = "🔇";
+        }
+      });
+    </script>
+  </body>
+</html>

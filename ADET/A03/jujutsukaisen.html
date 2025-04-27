@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Index | Jujutsu Kaisen</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Animate css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&family=Cinzel:wght@700&family=Orbitron:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #bdbdbd;
+        font-family: "Orbitron", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      .video-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #bg-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .intro-section {
+        background-color: #000;
+        color: #bdbdbd;
+        letter-spacing: 1px;
+        padding: 40px 15px;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .manga-header {
+        font-family: "Georgia", serif;
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 30px 0;
+        border: 3px solid transparent;
+        border-top-color: #ffffff;
+        border-bottom-color: #ffffff;
+        margin-bottom: 3rem;
+      }
+      .bento-box-wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .bento-box {
+        border: #bdbdbd 3px solid;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        background-color: #7f7d7d;
+      }
+
+      .bento-box img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+      }
+
+      .bento-box:hover .overlay {
+        opacity: 1;
+      }
+
+      .overlay h5 {
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+        color: #fff;
+      }
+
+      .overlay p {
+        font-size: 1rem;
+        color: #ddd;
+      }
+
+      .row.pt-2 {
+        margin-top: 2rem;
+      }
+
+      .col-lg-6,
+      .col-lg-3,
+      .col-lg-4,
+      .col-sm-12 {
+        padding: 15px;
+      }
+
+      .mute-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .mute-btn:focus {
+        outline: none;
+      }
+
+      .home-btn {
+        width: 70px;
+        height: 70px;
+        border: 3px solid #3f0513;
+        background: radial-gradient(circle at center, #0d0d0d 0%, #1a1a1a 100%);
+        color: #000000;
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 36px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 0 20px #eb1733, 0 0 40px #eb178c inset;
+        transition: 0.3s ease;
+        z-index: 10;
+      }
+
+      .home-btn:hover {
+        background: #60091f;
+        color: #0d0d0d;
+        box-shadow: 0 0 20px #eb1733, 0 0 40px #eb178c inset;
+        transform: scale(1.1);
+      }
+      .video-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .video-wrapper iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200%;
+        height: 200%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+
+      @media (max-width: 768px) {
+        .intro-section {
+          padding: 20px;
+        }
+
+        .manga-header {
+          font-size: 2rem;
+          padding: 20px 0;
+        }
+
+        .bento-box {
+          margin-bottom: 15px;
+        }
+
+        .video-wrapper {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          border-radius: 8px;
+        }
+
+        .video-wrapper iframe {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="video-container">
+      <video id="bg-video" autoplay loop muted>
+        <source src="assets/videos/jjkbg.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- Mute/Unmute Button -->
+    <button class="mute-btn" id="muteButton">🔇</button>
+
+    <!-- Intro Section -->
+    <div class="intro-section">
+      <h1
+        class="wow animate__animated animate__fadeInUp"
+        style="margin-bottom: 40px"
+      >
+        Jujutsu Kaisen
+      </h1>
+      <p
+        class="wow animate__animated animate__fadeInUp"
+        style="text-align: justify; margin: 0 auto; width: 80%"
+      >
+        Jujutsu Kaisen follows Yuji Itadori, a high school student who swallows
+        a cursed finger to save his friends, becoming the host of Sukuna, the
+        King of Curses. He is taken to Jujutsu High to learn how to fight curses
+        under Satoru Gojo’s guidance. Alongside fellow students Megumi Fushiguro
+        and Nobara Kugisaki, Yuji battles powerful curses while seeking to
+        collect Sukuna’s fingers. As enemies like Kenjaku and cursed spirits
+        threaten humanity, Yuji struggles with the dark power inside him,
+        fighting to protect his friends and the world from destruction.
+      </p>
+    </div>
+    <div class="container-fluid">
+      <div class="manga-header wow animate__animated animate__fadeInUp">
+        Top Picks
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-sm-12">
+          <div class="row">
+            <div class="col-lg-5 col-md-6 col-sm-12">
+              <div class="bento-box-wrapper">
+                <div
+                  class="bento-box wow animate__animated animate__delay-2s animate__fadeInRight"
+                  style="height: 40vh"
+                >
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/rYXih2N84QE?autoplay=1&controls=0&mute=1&loop=1&playlist=rYXih2N84QE&modestbranding=1&rel=0&showinfo=0"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+
+                  <div class="overlay">
+                    <h5>Sukuna Awakens</h5>
+                    <p>
+                      The King of Curses makes his presence known in a
+                      terrifying display of power.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7 col-md-6 col-sm-12">
+              <div
+                class="bento-box wow animate__animated animate__delay-1s animate__fadeInLeft"
+                style="height: 40vh"
+              >
+                <img
+                  src="assets/images/jjk2.webp"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                />
+                <div class="overlay">
+                  <h5>Yuta Okkotsu's first Apperance</h5>
+                  <p>
+                    Yuta, an extremely powerful sorcerer, is introduced during
+                    the Tokyo Metropolitan Curse Technical College arc, making a
+                    strong impact with his cursed energy and abilities.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div
+                class="bento-box wow animate__animated animate__delay-2s animate__fadeInRight"
+                style="height: 50vh"
+              >
+                <img
+                  src="assets/images/jjk1.webp"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                />
+                <div class="overlay">
+                  <h5>Yuji Swallows Sukuna’s Finger</h5>
+                  <p>
+                    To save his friends from a deadly Curse, Yuji made a
+                    desperate choice — he swallowed a decaying finger pulsing
+                    with dark energy. In an instant, Sukuna, the King of Curses,
+                    awakened inside him. But instead of losing control, Yuji
+                    overpowered him, shocking even the sorcerers. That moment
+                    turned a regular high schooler into the most dangerous
+                    vessel in Jujutsu history.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div
+                class="bento-box wow animate__animated animate__delay-2s animate__fadeInLeft"
+                style="height: 50vh"
+              >
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/OBrDE0WyAP4?autoplay=1&controls=0&mute=1&loop=1&playlist=OBrDE0WyAP4&modestbranding=1&rel=0&showinfo=0"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <div class="overlay">
+                  <h5>Gojo VS Jogo</h5>
+                  <p>
+                    The epic fight between Satoru Gojo and Jogo showcases Gojo's
+                    unmatched strength.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-5 col-sm-12">
+              <div
+                class="bento-box wow animate__animated animate__delay-2s animate__fadeIn"
+                style="height: 40vh"
+              >
+                <iframe
+                  style="width: 100%; height: 100%; object-fit: cover"
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/SK5opEqDf8Q?autoplay=1&controls=0&mute=1&loop=1&playlist=SK5opEqDf8Q&modestbranding=1&rel=0&showinfo=0"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <div class="overlay">
+                  <h5>Megumi Summons Mahoraga</h5>
+                  <p>
+                    Pushed to the edge, Megumi plays his final card — summoning
+                    Mahoraga, the unstoppable, ever-adapting Shikigami. With a
+                    flash of grit and madness, he risks his life, unleashing a
+                    monster even seasoned sorcerers fear to face.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div
+                class="bento-box wow animate__animated animate__delay-2s animate__fadeIn"
+              >
+                <div class="video-wrapper">
+                  <iframe
+                    style="width: 100%; height: 100%; object-fit: cover"
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/LMUQRwreXnE?autoplay=1&controls=0&mute=1&loop=1&playlist=LMUQRwreXnE&modestbranding=1&rel=0&showinfo=0"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                  <div class="overlay">
+                    <h5>Gojo ended Hanami</h5>
+                    <p>
+                      Gojo faces Hanami during the Shibuya Incident and
+                      effortlessly overpowers the cursed spirit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div
+                class="bento-box wow animate__animated animate__delay-2s animate__fadeIn"
+                style="height: 40vh"
+              >
+                <div class="video-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/HzCeyfNjSbo?autoplay=1&controls=0&mute=1&loop=1&playlist=HzCeyfNjSbo&modestbranding=1&rel=0&showinfo=0"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="overlay">
+                  <h5>Infinite Void</h5>
+                  <p>
+                    Time stops, senses overload — Gojo traps his enemies in
+                    endless knowledge.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-12">
+          <div class="bento-box wow animate__animated animate__fadeInRight">
+            <img
+              src="assets/images/jjk3.avif"
+              alt="Gojo Sealed"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+            <div class="overlay">
+              <h5>Gojo Sealed</h5>
+              <p>
+                In one of Jujutsu Kaisen’s most jaw-dropping twists, Gojo
+                Satoru, the world’s most powerful sorcerer, is sealed away in
+                the Prison Realm during the Shibuya Incident. Despite his
+                unmatched strength, Gojo is caught off guard by the cunning plan
+                of Geto and the Cursed Spirits. The sealing of Gojo shifts the
+                battle in favor of the cursed forces, plunging the world into
+                chaos without its strongest protector. This moment forever
+                alters the course of the series and leaves fans in shock,
+                questioning the fate of their heroes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center my-4">
+        <a href="../A03/index.html"
+          ><button
+            class="home-btn p-3 wow animate__animated animate__pulse animate__infinite"
+          ></button
+        ></a>
+      </div>
+    </div>
+    <!-- Wow Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init(); // Initialize WOW.js
+    </script>
+
+    <!-- Load YouTube Iframe API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script>
+      const video = document.getElementById("bg-video");
+      const muteButton = document.getElementById("muteButton");
+
+      video.muted = true;
+      video.autoplay = true;
+      video.loop = true;
+
+      video.oncanplaythrough = function () {
+        video.volume = 0.2;
+        video.play();
+      };
+
+      muteButton.addEventListener("click", () => {
+        if (video.muted) {
+          video.muted = false;
+          video.volume = 0.2;
+          muteButton.textContent = "🔊"; // Unmute button
+        } else {
+          video.muted = true;
+          video.volume = 0.2;
+          muteButton.textContent = "🔇"; // Mute button
+        }
+      });
+    </script>
+  </body>
+</html>
