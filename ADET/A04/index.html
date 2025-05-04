@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wild One - POS</title>
+    <link rel="Icon" type="image/png" href="images/pawprint.png" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Animate css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Fredoka", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff8f0;
+        color: #333;
+      }
+
+      .container-header {
+        background-color: #2e2d2a;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        font-size: 2em;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        background-color: #ebeae8;
+        padding: 15px 0;
+      }
+
+      .nav button {
+        background-color: #fff;
+        border: 2px solid #2e2d2a;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .nav button:hover {
+        background-color: #2e2d2a;
+        color: white;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 20px;
+      }
+
+      .products {
+        flex: 2;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+      }
+
+      .product {
+        border: 2px solid #2e2d2a;
+        border-radius: 15px;
+        padding: 15px;
+        text-align: center;
+        background-color: #fff;
+      }
+
+      .product h3 {
+        margin: 10px 0 5px;
+      }
+
+      .product p {
+        margin: 0;
+        font-weight: bold;
+      }
+
+      .receipt {
+        flex: 1;
+        background-color: #fffdf5;
+        border: 2px dashed #2e2d2a;
+        border-radius: 15px;
+        padding: 20px;
+      }
+
+      .receipt h2 {
+        text-align: center;
+      }
+
+      .receipt ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .receipt ul li {
+        border-bottom: 1px solid #eee;
+        padding: 8px 0;
+      }
+
+      .product-card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: 200px;
+        margin: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .product-name {
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-top: 10px;
+        color: #333;
+      }
+
+      .product-price {
+        font-size: 1em;
+        color: #888;
+        margin-top: 5px;
+      }
+
+      @media (max-width: 768px) {
+        .nav button {
+          font-size: 0.9em;
+          padding: 8px 15px;
+        }
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-header">Wild One</div>
+
+    <div class="container-fluid p-0">
+      <div class="nav" id="categories"></div>
+    </div>
+
+    <div class="container">
+      <div class="products" id="product-container"></div>
+
+      <div class="receipt" id="receipt">
+        <h2>Receipt</h2>
+        <p style="text-align: center; margin-top: 15px">
+          <strong>Total: ₱<span id="totalValue"> 0.00</span></strong>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var products = [
+        {
+          category: "Walk",
+          contents: [
+            {
+              isAvailable: true,
+              name: "Harness Walk Kit",
+              code: "HWLK",
+              price: 599,
+              image: "HWLK.png",
+            },
+            {
+              isAvailable: true,
+              name: "Collar Walk Kit",
+              code: "CWK",
+              price: 579,
+              image: "CWK.png",
+            },
+            {
+              isAvailable: true,
+              name: "Harness",
+              code: "HNS",
+              price: 579,
+              image: "HNS.png",
+            },
+            {
+              isAvailable: true,
+              name: "Collar",
+              code: "CLR",
+              price: 249,
+              image: "CLR.png",
+            },
+            {
+              isAvailable: true,
+              name: "Leash",
+              code: "LSH",
+              price: 299,
+              image: "LSH.png",
+            },
+            {
+              isAvailable: true,
+              name: "Poop Bags Carrier",
+              code: "PBC",
+              price: 149,
+              image: "PBC.png",
+            },
+            {
+              isAvailable: true,
+              name: "Treat Pouch",
+              code: "TP",
+              price: 399,
+              image: "TP.png",
+            },
+            {
+              isAvailable: true,
+              name: "Hands-Free Harness Walk Kit",
+              code: "HFHWK",
+              price: 849,
+              image: "HFHWK.png",
+            },
+            {
+              isAvailable: true,
+              name: "Hands-Free Collar Walk Kit",
+              code: "HFCWK",
+              price: 799,
+              image: "HFCWK.png",
+            },
+          ],
+        },
+        {
+          category: "Carry",
+          contents: [
+            {
+              isAvailable: true,
+              name: "Travel Carrier Tan",
+              code: "TCTN",
+              price: 1599,
+              image: "TCTN.png",
+            },
+            {
+              isAvailable: true,
+              name: "Travel Carrier Black",
+              code: "TCBL",
+              price: 1599,
+              image: "TCBL.png",
+            },
+            {
+              isAvailable: true,
+              name: "Everyday Carrier Cocoa",
+              code: "ECCC",
+              price: 2199,
+              image: "ECCC.png",
+            },
+            {
+              isAvailable: true,
+              name: "Everyday Carrier Black",
+              code: "ECBL",
+              price: 2199,
+              image: "ECBL.png",
+            },
+          ],
+        },
+        {
+          category: "Play",
+          contents: [
+            {
+              isAvailable: true,
+              name: "Tennis Tumble",
+              code: "TTMB",
+              price: 249,
+              image: "TTMB.png",
+            },
+            {
+              isAvailable: true,
+              name: "Plush Toy",
+              code: "PSHT",
+              price: 249,
+              image: "PSHT.png",
+            },
+            {
+              isAvailable: true,
+              name: "Chew Chain",
+              code: "CCH",
+              price: 129,
+              image: "CCH.png",
+            },
+            {
+              isAvailable: true,
+              name: "Twiss Toss",
+              code: "TWS",
+              price: 99,
+              image: "TWS.png",
+            },
+            {
+              isAvailable: true,
+              name: "Triangle Tug",
+              code: "TRTG",
+              price: 259,
+              image: "TRTG.png",
+            },
+            {
+              isAvailable: true,
+              name: "Tennis Balls",
+              code: "TBS",
+              price: 129,
+              image: "TBS.png",
+            },
+          ],
+        },
+        {
+          category: "Life",
+          contents: [
+            {
+              isAvailable: true,
+              name: "Organic Baked Treats PMPS",
+              code: "PMPS",
+              price: 199,
+              image: "PMPS.png",
+            },
+            {
+              isAvailable: true,
+              name: "Organic Baked Treats PBJ",
+              code: "PBJ",
+              price: 199,
+              image: "PBJ.png",
+            },
+            {
+              isAvailable: true,
+              name: "Organic Baked Treats FRTS",
+              code: "FRTS",
+              price: 199,
+              image: "FRTS.png",
+            },
+            {
+              isAvailable: true,
+              name: "Grooming Wipes",
+              code: "GMWP",
+              price: 99,
+              image: "GMWP.png",
+            },
+            {
+              isAvailable: true,
+              name: "Placemat",
+              code: "PLCM",
+              price: 499,
+              image: "PLCM.png",
+            },
+            {
+              isAvailable: true,
+              name: "Meal Time Kit",
+              code: "MTK",
+              price: 1299,
+              image: "MTK.png",
+            },
+            {
+              isAvailable: true,
+              name: "Bowl Kit",
+              code: "BK",
+              price: 849,
+              image: "BK.png",
+            },
+            {
+              isAvailable: true,
+              name: "Slow Feeder",
+              code: "SLWF",
+              price: 399,
+              image: "SLWF.png",
+            },
+            {
+              isAvailable: true,
+              name: "Organic Rinseless Shampoo",
+              code: "ORSH",
+              price: 299,
+              image: "ORSH.png",
+            },
+          ],
+        },
+      ];
+
+      function loadCategories() {
+        var categoriesContainer = document.getElementById("categories");
+
+        products.forEach((product, index) => {
+          categoriesContainer.innerHTML += `
+      <button onclick="loadProducts(${index})">${product.category}</button>
+    `;
+        });
+      }
+      function loadProducts(categoryIndex) {
+        var maincontainer = document.getElementById("product-container");
+        maincontainer.innerHTML = ""; // Clear the container
+
+        // Loop through the products in the selected category
+        products[categoryIndex].contents.forEach((content) => {
+          maincontainer.innerHTML += `
+      <div class="product-card" role="button" onclick="addToReceipt(${content.price}, '${content.code}')">
+        <img src="images/${content.image}" alt="${content.name}" />
+        <div class="product-name">${content.name}</div>
+        <div class="product-price">₱${content.price}</div>
+      </div>
+    `;
+        });
+      }
+      var total = 0;
+      function addToReceipt(price, code) {
+        var receiptContainer = document.getElementById("receipt");
+        total += parseFloat(price);
+        console.log("hha");
+        var totalValueElement = document.getElementById("totalValue");
+        totalValueElement.innerHTML = total.toFixed(2);
+
+        receiptContainer.innerHTML += `
+          <div class="d-flex flex-row justify-content-between">
+            <div><small>${code}</small></div>
+            <div><small>₱${price}</small></div>
+          </div>
+        `;
+      }
+
+      loadCategories();
+    </script>
+    <script>
+      src =
+        "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js";
+      integrity =
+        "sha384-KyZXEJx3t7ml2SQM6n7vPUC2yFu3gD2d3yL+3p3vNY6VFX5mrO+z4D/a6dveA7eX";
+      crossorigin = "anonymous";
+    </script>
+  </body>
+</html>
