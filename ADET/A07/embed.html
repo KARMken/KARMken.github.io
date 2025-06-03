@@ -124,12 +124,20 @@
         opacity: 0.9;
       }
 
-      @media (max-width: 768px) {
-        #header {
-          font-size: 1.2rem;
-          padding: 8px 15px;
-        }
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
 
+      ::-webkit-scrollbar-thumb {
+        background: #0d6efd;
+        border-radius: 20px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #081b29;
+      }
+
+      @media (max-width: 768px) {
         .leaflet-tooltip {
           font-size: 0.8rem;
         }

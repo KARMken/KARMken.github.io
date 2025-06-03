@@ -19,7 +19,7 @@ let buttonPromises = regions.map((region) => {
       btn.style.border = "none";
       btn.style.color = "white";
       btn.onclick = () => {
-        map.setView([region.lat, region.lon], 9);
+        map.setView([region.lat, region.lon], 15);
         showExtendedForecast(region.lat, region.lon, region.name, color);
       };
       regionButtons.appendChild(btn);
